@@ -1,8 +1,8 @@
 <?php
 
 /* DATA */
-/* $zipcode ='50613'; */
-$zipcode = $_GET['zipcode'];
+$zipcode ='30096'; 
+//$zipcode = $_GET['zipcode'];
 
 /* DISPLAY */
 
