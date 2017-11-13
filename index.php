@@ -11,7 +11,10 @@ if (!$data) die('JSON syntax error in "'.CONFIG.'"');
 function render($module) {
     $argstr = array();
     $args = isset($module->args) ? $module->args : NULL;
-    $args->width = $module->width;
+	if (!isset($args))
+		$args = new stdClass();
+	$args->width = $module->width;
+	
     foreach($args as $key => $val) {
         $argstr[] = "$key=" . urlencode($val);
     }

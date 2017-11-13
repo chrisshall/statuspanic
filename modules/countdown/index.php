@@ -1,7 +1,7 @@
 <?php
 
 /* DEFAULTS */
-date_default_timezone_set('America/Chicago');
+date_default_timezone_set('America/New_York');
 $stop = time(); 
 
 /* DATA */

@@ -1,6 +1,6 @@
 <?php
 
-date_default_timezone_set('America/Chicago');
+date_default_timezone_set('America/New_York');
 $format = 'g:i a';
 
 if (!empty($_GET['timezone'])) 

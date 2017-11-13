@@ -1,4 +1,4 @@
-/* FONT */
+﻿/* FONT */
 
 @font-face {
 	font-family: 'Cutouts';
@@ -49,6 +49,11 @@ body {
 
 .jumbo {
 	font-size: 28px;
+}
+
+.jumbo_left {
+	
+	text-align:left;
 }
 
 .vertical-center {

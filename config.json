@@ -14,7 +14,7 @@
     {
       "name": "grid",
       "width": 980,
-      "update": 300
+      "update": 99999999
     },
     {
       "name": "countdown",
@@ -23,7 +23,7 @@
       "args": {
         "event": "UNTIL SOMETHING",
         "stop": 1274706000,
-        "timezone": "America/Chicago"
+        "timezone": "America/New_York"
       }
     },
     {
@@ -43,18 +43,18 @@
       "height": 120,
       "update": 60, 
       "args": {
-        "timezone": "America/Chicago",
+        "timezone": "America/New_York",
         "format": "h:i a"
       }      
     },
     {
       "name": "weather",
-      "class": "mini middle",
+      "class": "mini jumbo_left",
       "width": 440,
       "height": 120,
-      "update": 3600, 
+      "update": 100000, 
       "args": {
-        "zipcode": "50613"
+        "zipcode": "30096"
       }
     },
     {
