@@ -1,11 +1,11 @@
 {
-  "width": 1000,
+  "width": 1200,
   "title": "Status Board",
   "modules": [
     {
       "name": "bargraph",
-      "width": 980,
-      "update": 15, 
+      "width": 1100,
+      "update": 100, 
       "class": "middle",
       "args": {
         "height": 300
@@ -13,12 +13,12 @@
     },
     {
       "name": "grid",
-      "width": 980,
+      "width": 1100,
       "update": 99999999
     },
     {
       "name": "countdown",
-      "width": 980,
+      "width": 1100,
       "update": 3600, 
       "args": {
         "event": "UNTIL SOMETHING",
@@ -29,7 +29,7 @@
     {
       "name": "arrow",
       "class": "mini middle",
-      "width": 300,
+      "width": 200,
       "height": 120,
       "update": 15, 
       "args": {
@@ -49,9 +49,9 @@
     },
     {
       "name": "weather",
-      "class": "mini jumbo_left",
-      "width": 440,
-      "height": 120,
+      "class": "mini module",
+      "width": 600,
+      "height": 150,
       "update": 100000, 
       "args": {
         "zipcode": "30096"

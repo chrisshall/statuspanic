@@ -16,33 +16,84 @@ $url_contents_forecast = curl('http://api.wunderground.com/api/89f006e4b4be6bbf/
 
 // Conver JSON data to PHP Array 
 $data_current = json_decode($url_contents_current, true);
-$data_forcast = json_decode($url_contents_forecast, true);
+$data_forecast = json_decode($url_contents_forecast, true);
 
 // Get Icon of current weather
 $data_current = $data_current['current_observation'];
 $icon_url=$data_current['icon_url'];
 
-$data_forcast = $data_forcast['forecast']['simpleforecast']['forecastday'];
+$data_forecast = $data_forecast['forecast']['simpleforecast']['forecastday'];
 
 
-
-
-function displayIcon($string){	
+function displayCurrentIcon($string){	
 	echo '
 		<html>
-		<p> Currently </p> </br>
-		<img src=' . $string . ' height="50" width="50" />
+		<p> Currently </p> 
+		<img src=' . $string . ' height="75" width="75" />
 		<br>
 		</html>
 	';
 }
+
+function displayIcon($array){	
+	echo '
+		<html>
+		<p> ' . $array['date']['weekday_short'] . ' </p> 
+		<img src=' . $array['icon_url'] . ' height="50" width="50" />
+		<br>
+		</html>
+	';
+}
+
 ?>
 
-<div class="padding">
-    <div class='jumbo_left'>
-        <?php echo displayIcon($icon_url);
+<html>
+<table class='padd'>
+  <tr>
+    <td>
+<div>
+    <div class='jumbo'>
+        <?php echo displayCurrentIcon($icon_url);
 		echo $data_current['temp_f'] . '&deg; F, ' . $data_current['weather'];
 		?>
     </div>
     <div><?php echo $data_current['display_location']['zip'] ?> / <?php echo $data_current['display_location']['city'] ?></div>
 </div>
+	</td>
+<td>
+<div>
+    <div>
+        <?php echo displayIcon($data_forecast['0']);
+		echo  $data_forecast['0']['high']['fahrenheit'] . '&deg; F' ?> / 
+		<?php echo $data_forecast['0']['low']['fahrenheit'] . '&deg; F '?>
+    </div>
+    <div><?php echo $data_forecast['0']['conditions'] ?></div>
+</div>
+	</td>
+	<td>
+	<div>
+    <div>
+        <?php echo displayIcon($data_forecast['1']);
+		echo  $data_forecast['1']['high']['fahrenheit'] . '&deg; F' ?> / 
+		<?php echo  $data_forecast['1']['low']['fahrenheit'] . '&deg; F '?>
+    </div>
+    <div><?php echo $data_forecast['1']['conditions'] ?></div>
+</div>
+	</td>
+	<td>
+	<div>
+    <div>
+        <?php echo displayIcon($data_forecast['2']);
+		echo $data_forecast['2']['high']['fahrenheit'] . '&deg; F' ?> / 
+		<?php echo  $data_forecast['2']['low']['fahrenheit'] . '&deg; F '?>
+    </div>
+    <div><?php echo $data_forecast['2']['conditions'] ?></div>
+</div>
+	</td>
+	
+  </tr>
+</table>
+
+
+
+<html>
