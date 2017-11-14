@@ -9,12 +9,13 @@ if (!empty($_GET['timezone']))
 if (!empty($_GET['format'])) 
     $format = $_GET['format']; 
     
+
 /* DATA */
 $time = date($format);
 
 /* DISPLAY */
 ?>
 
-<div class='mega vertical-center'>
-    <span class='icon'>H</span><?php echo $time; ?>
+<div class='mega padd'>
+    <?php echo $time; ?>
 </div>

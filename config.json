@@ -17,40 +17,30 @@
       "update": 99999999
     },
     {
-      "name": "countdown",
-      "width": 1100,
-      "update": 3600, 
+     "name": "clock",
+      "class": "mini padd",
+      "width": 220,
+      "height": 120,
+      "update": 60, 
       "args": {
-        "event": "UNTIL SOMETHING",
-        "stop": 1274706000,
-        "timezone": "America/New_York"
-      }
+        "timezone": "America/New_York",
+        "format": "g:i a"
+      }      
     },
     {
       "name": "arrow",
       "class": "mini middle",
       "width": 200,
-      "height": 120,
+      "height": 100,
       "update": 15, 
       "args": {
         "value": 0.95
       }
     },
     {
-     "name": "clock",
-      "class": "mini middle",
-      "width": 200,
-      "height": 120,
-      "update": 60, 
-      "args": {
-        "timezone": "America/New_York",
-        "format": "h:i a"
-      }      
-    },
-    {
       "name": "weather",
       "class": "mini module",
-      "width": 600,
+      "width": 700,
       "height": 150,
       "update": 100000, 
       "args": {
@@ -67,11 +57,6 @@
       "width": 200,
       "update": 0,
       "class": "mini bluegradient"
-    },
-    {
-      "name": "meta",
-      "width": 980,
-      "update": 0
     }
   ]
 }

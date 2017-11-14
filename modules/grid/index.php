@@ -1,13 +1,18 @@
 <?php
 
 /* DATA */
-$data = array(
+/*$data = array(
   array('ATL2832 - X5 Debian',      '9/23/17', 'Chris H.', 'In Progress'),
   array('UNISON',       'Blurb', 'Blarb', 'Z@statuspanic, L@statuspanic, I@statuspanic'),
   array('CODA',         'Blurb', 'Blarb', 'Z@statuspanic, H@statuspanic, P@statuspanic'),
   array('OTHER THING',  'Blurb', 'Blarb', 'G@statuspanic, L@statuspanic'),
   array('EXCITING',     'Blurb', 'Blarb', 'L@statuspanic, G@statuspanic, I@statuspanic')
-);
+);*/
+
+$str = file_get_contents('./SCERJSON.json');
+$data = json_decode($str, true);
+
+
 
 /* DISPLAY */
 
@@ -15,13 +20,20 @@ $data = array(
 
 <div class="grid">
     <table border='0' width='100%' cellpadding='0' cellspacing='10'>
+		<th>SCER #</th>
+		<th>Assigned To</th>
+		<th>Customer</th>
+		<th>Need Date</th>
     <?php
-    $count = 0;
     foreach($data as $row) {
-        $class = ($count % 2 == 1 ? " class='alt'" : '');
-        echo "<tr$class>";
-        for($j = 0; $j < count($row); $j++) {
-            if ($j!=3) {
+			echo '<tr>';
+            echo "<td class='td'> " . 'ATL' . $row['scer #'] . "</td>";
+			echo "<td class='td'> " . $row['assigned_to'] . "</td>";
+			echo "<td class='td'> " . $row['Customer'] . "</td>";
+			echo "<td class='td'> " . $row['need_date'] . "</td>";
+			
+			
+			/*if ($j!=3) {
                 echo "<td class='cell_$j'>$row[$j]</td>";
             } else {
                 $gravatar = ''; 
@@ -30,11 +42,8 @@ $data = array(
                     $gravatar .= '<img src="http://www.gravatar.com/avatar.php?gravatar_id='. md5($email) .'&s=40&d=monsterid"> ';            
                 }
                 echo "<td class='cell_$j'>$gravatar</td>";
-            }
-
-        }
+            }*/
         echo '</tr>';
-        $count++;
     }
     
     ?>
