@@ -7,16 +7,60 @@ class Bar {
         $this->remaining = $remaining;
     }
 }
+// Get SCER JSON file 
+$str = file_get_contents('../grid/SCERJSON.json');
+$data = json_decode($str, true);
+
+// Set SCER count to 0 before processing 
+$garcia_count=0;
+$pickard_count=0;
+$cohen_count=0;
+$stokes_count=0;
+$hall_count=0;
+$orit_count=0;
+$takagi_count=0;
+$no_name_count=0;
+
+foreach ($data as $row){
+	if ($row['assigned_to'] != null){
+		$temp_str= strtolower($row['assigned_to']);
+		//echo $temp_str;
+		if (strpos($temp_str,'garcia') !== false) 
+			$garcia_count++;
+		if ($temp_str == 'pickard') 
+			$pickard_count++;
+		if (strpos($temp_str,'stokes') !== false)
+			$stokes_count++;
+		if (strpos($temp_str,'cohen') !== false)
+			$cohen_count++;
+		if (strpos($temp_str,'hap') !== false)
+			$cohen_count++;
+		if (strpos($temp_str,'hall') !== false)
+			$hall_count++;
+		if (strpos($temp_str,'selagea') !== false)
+			$hall_count++;	
+		if (strpos($temp_str,'orit') !== false)
+			$orit_count++;
+		if (strpos($temp_str,'takagi') !== false)
+			$takagi_count++;
+	}
+	else
+		$no_name_count++;
+
+}
+$total_scers = count($data);
+
 
 /* DATA */
 $bars = array();
-$bars[] = new Bar('TRANSMIT',  18,   1); 
-$bars[] = new Bar('CODA',      29,   3); 
-$bars[] = new Bar('UNISON',    48,   3); 
-$bars[] = new Bar('CANDYBAR',   8,   2); 
-$max = rand(3, 100);
-$bars[] = new Bar('GENERAL', $max,   0);
-$bars[] = new Bar('SECRETS',   15,   2);
+$bars[] = new Bar('Garcia',  $garcia_count,   $total_scers); 
+$bars[] = new Bar('Pickard',      $pickard_count,   $total_scers); 
+$bars[] = new Bar('Cohen',    $cohen_count,   $total_scers); 
+$bars[] = new Bar('Stokes',   $stokes_count,   $total_scers);
+$bars[] = new Bar('Hall', $hall_count,   $total_scers);
+$bars[] = new Bar('Orit',   $orit_count,   $total_scers);
+$bars[] = new Bar('Takagi', $takagi_count, $total_scers);
+$bars[] = new Bar('No Name', $no_name_count, $total_scers);
 
 
 /* DISPLAY */
@@ -27,8 +71,8 @@ foreach($bars as $bar) {
 }
 
 // change these
-$max_bar_width = 300;
-$default_padding = 12;
+$max_bar_width = 250;
+$default_padding = 10;
 
 // don't change these
 $total_outer = ($default_padding * 2); // (paddings + borders)
@@ -38,6 +82,10 @@ $bar_width = floor(min($max_bar_width, ($max_width - ($total_outer * $num_bars))
 $final_padding = max($default_padding, ($max_width - (($bar_width + $total_outer) * $num_bars)) / $num_bars / 2);
 ?>
 
+<div class='jumbo middle'>
+	</br>SCER Analytics
+</div>
+
 <div>
   <div class="bars">
 <?php for($j = 0; $j < count($bars); $j++) {
@@ -46,7 +94,6 @@ $final_padding = max($default_padding, ($max_width - (($bar_width + $total_outer
     $bar_height =  ($bar->height / $max_height) * $_GET['height'];
     $bar_height = floor($bar_height);
     $top_offset = $_GET['height'] - $bar_height;
-
     
 ?>
     <div class='bar' style='margin-top: <?php echo $top_offset . 'px; width: ' .

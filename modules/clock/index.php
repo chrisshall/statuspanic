@@ -16,6 +16,6 @@ $time = date($format);
 /* DISPLAY */
 ?>
 
-<div class='mega padd'>
+<div class='mega vertical-center'>
     <?php echo $time; ?>
 </div>

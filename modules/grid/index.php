@@ -18,15 +18,15 @@ $data = json_decode($str, true);
 
 ?>
 
-<div class="grid">
-    <table border='0' width='100%' cellpadding='0' cellspacing='10'>
-		<th>SCER #</th>
-		<th>Assigned To</th>
-		<th>Customer</th>
-		<th>Need Date</th>
+<div class='grid'>
+    <table  class=' grid table' border='0' width='100%' cellpadding='0' cellspacing='10'>
+		<th class='grid th'>SCER#</th>
+		<th class='grid th'>Assigned</th>
+		<th class='grid th'>Customer</th>
+		<th class='grid th'>Need Date</th>
     <?php
     foreach($data as $row) {
-			echo '<tr>';
+			echo "<tr class='r'>";
             echo "<td class='td'> " . 'ATL' . $row['scer #'] . "</td>";
 			echo "<td class='td'> " . $row['assigned_to'] . "</td>";
 			echo "<td class='td'> " . $row['Customer'] . "</td>";
@@ -35,7 +35,7 @@ $data = json_decode($str, true);
 			
 			/*if ($j!=3) {
                 echo "<td class='cell_$j'>$row[$j]</td>";
-            } else {
+             }else {
                 $gravatar = ''; 
                 $array = preg_split('/,/', $row[$j], -1, PREG_SPLIT_NO_EMPTY);
                 foreach ($array as $email) {

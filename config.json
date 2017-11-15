@@ -39,9 +39,9 @@
     },
     {
       "name": "weather",
-      "class": "mini module",
-      "width": 700,
-      "height": 150,
+      "class": "mini module middle",
+      "width": 650,
+      "height": 200,
       "update": 100000, 
       "args": {
         "zipcode": "30096"
@@ -49,14 +49,21 @@
     },
     {
       "name": "space",
-      "width": 300,
+      "width": 10,
       "update": 0
     },
+	{
+	  "name": "maps",
+	  "width": 400,
+	  "update": 0,
+	  "class": "modules"
+	  },
     {
-      "name": "bubblelist",
+      "name": "marta",
       "width": 200,
       "update": 0,
       "class": "mini bluegradient"
     }
+	
   ]
 }

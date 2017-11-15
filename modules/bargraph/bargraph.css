@@ -1,4 +1,4 @@
-/* GRAPH MODULE */
+﻿/* GRAPH MODULE */
 
 .bar {
 	position: relative;
@@ -11,8 +11,9 @@
 	float: left;	
 }
 .bar-title {
-	margin-top: 12px;	
+	margin-top: 12px;
 	float: left;
+	text-align: center;
 }
 
 .bar .header {
@@ -87,4 +88,23 @@
 	border-top-color: #ede80a;	
 	border-right-color: #beba06;	
 }
+
+#bar_7 {
+	background: #FF6600;
+	border-color: #FF6600;
+	border-left-color: #FF6666;
+	border-top-color: #FF6600;
+	border-right-color: #CC0000;
+}
+
+#bar_8 {
+	background: #00000;
+	border-color: #000000;
+	border-left-color: #FFFFFF;
+	border-top-color: #FFFFFF;
+	border-right-color: #808080;
+}
+
+
+
 
