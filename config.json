@@ -1,11 +1,11 @@
 {
-  "width": 1200,
+  "width": 1100,
   "title": "Status Board",
   "modules": [
     {
       "name": "bargraph",
-      "width": 1100,
-      "update": 100, 
+      "width": 1000,
+      "update": 0, 
       "class": "middle",
       "args": {
         "height": 300
@@ -13,8 +13,8 @@
     },
     {
       "name": "grid",
-      "width": 1100,
-      "update": 99999999
+      "width": 1000,
+      "update": 0
     },
     {
      "name": "clock",
@@ -40,9 +40,9 @@
     {
       "name": "weather",
       "class": "mini module middle",
-      "width": 650,
+      "width": 550,
       "height": 200,
-      "update": 100000, 
+      "update": 300, 
       "args": {
         "zipcode": "30096"
       }
@@ -54,9 +54,9 @@
     },
 	{
 	  "name": "maps",
-	  "width": 400,
+	  "width": 600,
 	  "update": 0,
-	  "class": "modules"
+	  "class": "modules mini"
 	  },
     {
       "name": "marta",
