@@ -48,7 +48,7 @@ function displayIcon($array){
 ?>
 
 <html>
-<table class='padd'>
+<table>
   <tr>
     <td>
 <div>

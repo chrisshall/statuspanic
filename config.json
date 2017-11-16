@@ -2,21 +2,17 @@
   "width": 1100,
   "title": "Status Board",
   "modules": [
-    {
-      "name": "bargraph",
-      "width": 1000,
-      "update": 0, 
-      "class": "middle",
+     {
+      "name": "arrow",
+      "class": "mini middle",
+      "width": 200,
+      "height": 100,
+      "update": 15, 
       "args": {
-        "height": 300
+        "value": 0.95
       }
     },
-    {
-      "name": "grid",
-      "width": 1000,
-      "update": 0
-    },
-    {
+      {
      "name": "clock",
       "class": "mini padd",
       "width": 220,
@@ -28,18 +24,8 @@
       }      
     },
     {
-      "name": "arrow",
-      "class": "mini middle",
-      "width": 200,
-      "height": 100,
-      "update": 15, 
-      "args": {
-        "value": 0.95
-      }
-    },
-    {
       "name": "weather",
-      "class": "mini module middle",
+      "class": "mini middle",
       "width": 550,
       "height": 200,
       "update": 300, 
@@ -48,8 +34,23 @@
       }
     },
     {
+      "name": "bargraph",
+      "width": 1000,
+      "update": 0, 
+      "class": "middle",
+      "args": {
+        "height": 300
+      }
+    },
+	    {
       "name": "space",
-      "width": 10,
+      "width": 1100,
+	  "height": 30,
+      "update": 0
+    },
+    {
+      "name": "grid",
+      "width": 1000,
       "update": 0
     },
 	{
@@ -58,6 +59,13 @@
 	  "update": 0,
 	  "class": "modules mini"
 	  },
+	{
+      "name": "travel",
+      "width": 400,
+	  "height": 175,
+      "update": 72,
+      "class": "mini bluegradient"
+    },
     {
       "name": "marta",
       "width": 200,
