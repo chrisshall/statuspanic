@@ -11,36 +11,31 @@ if (rand(0,4) == 0) {
 if (!empty($_GET['value'])) 
     $num = $_GET['value'];
 */
-$username_key = 'fdf625991e77c7207ee9167235405781';
-$password_key = '7392c7238335493c203f8c529c51bf4d';
+//$username_key = 'fdf625991e77c7207ee9167235405781';
+//$password_key = '7392c7238335493c203f8c529c51bf4d';
 
-/*
-$process = curl_init('https://' . $username_key . ':' . $password_key . '@api.intrinio.com/companies?ticker=NCR');
-curl_setopt($process, CURLOPT_HTTPHEADER, array('Content-Type: application/xml', $additionalHeaders));
-curl_setopt($process, CURLOPT_HEADER, 1);
-curl_setopt($process, CURLOPT_USERPWD, $username_key . ":" . $password_key);
-curl_setopt($process, CURLOPT_TIMEOUT, 30);
-curl_setopt($process, CURLOPT_POST, 1);
-curl_setopt($process, CURLOPT_POSTFIELDS, $payloadName);
-curl_setopt($process, CURLOPT_RETURNTRANSFER, TRUE);
-$return = curl_exec($process);
-curl_close($process);
-*/
+$string = file_get_contents('https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=NCR&interval=5min&outputsize=full&apikey=AZT5Q3UOFPEOCJYT');
+$data = json_decode($string, true);
+$start_price = $data['Time Series (5min)'][date("Y-m-d") . ' 09:30:00']['1. open'];
+
+//Need to round current time down to 5-min interval
+date_default_timezone_set('America/New_York');
+$datetime = new DateTime();
+$minute = $datetime->format('i');
+$minute = $minute - $minute%5;
+$current_time = date("Y-m-d H:");
+if ($minute == 0)
+	$minute = "00";
+$current_time = $current_time . $minute . ":00";
+
+$current_price = $data['Time Series (5min)'][$current_time]['4. close'];
 
 
-$string = file_get_contents("https://fdf625991e77c7207ee9167235405781:7392c7238335493c203f8c529c51bf4d@api.intrinio.com/companies?ticker=NCR");
-//$arrMatches = explode('// ', $string); // get uncommented json string
-$data = json_decode($string, true); // decode json
-//$price = $assJson["l"];
-//echo $price;
-//print_r($data);
-
-$num = 0;
 /* DISPLAY */
-if ($num > 0) {
+if ($start_price < $current_price) {
     $class = 'uparrow';
     $code = 'A';
-} elseif ($num < 0) {
+} elseif ($start_price > $current_price) {
     $class = 'downarrow';
     $code = 'A';
 } else {
@@ -50,6 +45,7 @@ if ($num > 0) {
 ?>
 
 <div>    
+	<span class='jumbo'> <?php echo 'NCR'."<br>".$current_price ?> </span>
     <span class='<?php echo $class ?>' id='arrow_icon'><?php echo $code ?></span>
-    <span class='mega'><?php echo $num ?>%</span>
+    <span class='mega'><?php echo ($current_price-$start_price) ?></span>
 </div>

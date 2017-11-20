@@ -7,7 +7,7 @@
       "class": "mini middle",
       "width": 200,
       "height": 100,
-      "update": 15, 
+      "update": 300, 
       "args": {
         "value": 0.95
       }
