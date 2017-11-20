@@ -3,7 +3,7 @@
   "title": "Status Board",
   "modules": [
      {
-      "name": "arrow",
+      "name": "stocks",
       "class": "mini middle",
       "width": 200,
       "height": 100,
