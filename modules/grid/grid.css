@@ -3,9 +3,9 @@
 	border-spacing: 10px 10px;
 	border-collapse: separate;
 	top: auto;
-	/*overflow: scroll;*/
+	overflow: scroll;
 	height:600px;
-	/*display:block;*/
+	display:block;
 }
 
 .grid th {
@@ -14,11 +14,6 @@
 /* scoll bar width */
 ::-webkit-scrollbar {
 	width: 12px;
-}
-.grid tbody {
-	display: block;
-	height: 100px;
-	overflow: scroll;
 }
 
 ::-webkit-scrollbar-track {
