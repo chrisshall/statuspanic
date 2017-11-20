@@ -1,5 +1,17 @@
 <?php
 
+/* Midtown Station Routes:
+*	12
+*	27
+*	36
+*	109
+*/
+
+//Get Route 12 
+
+
+
+
 $items = array(
     // 'bubble' => 'line'
     '4|gold'  => '1:02',
