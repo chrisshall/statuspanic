@@ -14,12 +14,10 @@
 
 $items = array(
     // 'bubble' => 'line'
-    '4|gold'  => '1:02',
-    '9|red'     => '9 min',
-    '14|red'    => '5 min',
-    '19|red'    => '11 min',
-    '20|gold' => '3:55'
-)
+    '12|gold'  => '1:02',
+    '27|red'     => '9 min',
+    '36|red'    => '5 min',
+    '109|red'    => '11 min')
 
 //$bus_array = array();
 
