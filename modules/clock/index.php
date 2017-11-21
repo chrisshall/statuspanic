@@ -12,10 +12,15 @@ if (!empty($_GET['format']))
 
 /* DATA */
 $time = date($format);
+$datetime = date("D M. j"); 
 
 /* DISPLAY */
 ?>
 
-<div class='mega vertical-center'>
-    <?php echo $time; ?>
+<div class='time vertical-center'>
+    <?php echo $time;?>
+</div>
+
+<div class='date'>
+	<?php echo $datetime;?>
 </div>

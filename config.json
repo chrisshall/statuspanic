@@ -7,10 +7,7 @@
       "class": "mini middle",
       "width": 200,
       "height": 250,
-      "update": 300, 
-      "args": {
-        "value": 0.95
-      }
+      "update": 300
     },
       {
      "name": "clock",
@@ -57,14 +54,14 @@
 	  "name": "maps",
 	  "width": 600,
 	  "height": 600,
-	  "update": 30,
+	  "update": 300,
 	  "class": "modules mini"
 	  },
 	{
       "name": "travel",
       "width": 400,
 	  "height": 175,
-      "update": 100,
+      "update": 120,
       "class": "mini bluegradient"
     },
     {

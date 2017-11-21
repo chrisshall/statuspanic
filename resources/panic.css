@@ -80,6 +80,13 @@ padding:1.5em;
 	/* .middle centers vertically with javascript */
 }
 
+.time {
+	font-size:40px;
+}
+.date {
+	margin-top: 2em;
+	font-size:35px;
+}
 .center {
 	color: #fff;
 	font-style: normal;
