@@ -1,0 +1,59 @@
+﻿/* BUBBLE LIST MODULE */
+
+ul {
+	list-style-type: none;
+	padding: 0;
+	padding-top: 8px;	
+	padding-bottom: 8px;		
+	margin: 0;
+	clear: left;
+	margin-bottom: 8px;		
+}
+
+li {
+	display: block;
+	float: left;
+	clear: left;
+	padding: 5px;
+}
+
+li .content {
+	display: block;
+	line-height: 40px;
+	float: left;
+	margin-left: 10px;
+	font-size: 28px;
+}
+
+.marta_north span {
+	display: block;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	padding: 0;
+	margin: 0;
+	float: left;
+}
+
+.marta_north .background {
+	font-style: normal;
+	font-family: 'Cutouts';
+	font-size: 70px;
+}
+
+.marta_north.red .background {
+	color: #d81817;
+}
+
+.marta_north.gold .background {
+	color: #FFFF00;
+}
+.marta_north.blue .background {
+	color: #0000FF;
+}
+
+.marta_north .display {
+	text-align: center;
+	margin-left: -30px;
+	font-size: 20px;
+}

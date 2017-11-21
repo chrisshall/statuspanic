@@ -25,7 +25,7 @@ li .content {
 	font-size: 28px;
 }
 
-.marta span {
+.marta_south span {
 	display: block;
 	width: 40px;
 	height: 40px;
@@ -35,21 +35,24 @@ li .content {
 	float: left;
 }
 
-.marta .background {
+.marta_south .background {
 	font-style: normal;
 	font-family: 'Cutouts';
 	font-size: 70px;
 }
 
-.marta.red .background {
+.marta_south.red .background {
 	color: #d81817;
 }
 
-.marta.gold .background {
+.marta_south.gold .background {
 	color: #FFFF00;
 }
+.marta_south.blue .background {
+	color: #0000FF;
+}
 
-.marta .display {
+.marta_south .display {
 	text-align: center;
 	margin-left: -30px;
 	font-size: 20px;
