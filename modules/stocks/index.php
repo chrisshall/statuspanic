@@ -23,7 +23,7 @@ date_default_timezone_set('America/New_York');
 $datetime = new DateTime();
 // If the market it open (from 9:30AM - 4:00PM)
 if ($datetime->format('H') > 9 || ($datetime->format('H') == 9 && $datetime->format('i') >= 30)){
-	$start_price = $data['Time Series (5min)'][date("Y-m-d") . ' 09:30:00']['1. open'];
+	$start_price = $data['Time Series (5min)'][date('Y-m-d',time() -60*60*24).' 16:00:00']['4. close'];
 	$minute = $datetime->format('i');
 	$minute = $minute - $minute%5;
 	$current_time = date("Y-m-d H:");
@@ -42,7 +42,7 @@ elseif($datetime->format('H') <9 || ($datetime->format('H') == 9 && $datetime->f
 //Market has closed. Take price of last close.
 else{
 	$current_price = $data['Time Series (5min)'][date('Y-m-d') . ' 16:00:00']['4. close'];
-	$start_price = $data['Time Series (5min)'][date("Y-m-d") . ' 09:30:00']['1. open'];
+	$start_price = $data['Time Series (5min)'][date('Y-m-d',time() -60*60*24).' 16:00:00']['4. close'];
 }
 
 /* DISPLAY */

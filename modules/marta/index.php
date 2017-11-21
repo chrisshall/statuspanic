@@ -8,8 +8,30 @@
 */
 
 //Get Route 12 
+$file = file_get_contents('Route12S.json');
+$route12S = json_decode($file);
+$file = file_get_contents('Route12N.json');
+$route12N = json_decode($file);
 
+//Get Route 27
+$file = file_get_contents('Route27S.json');
+$route27S = json_decode($file)
+$file = file_get_contents('Route27N.json');
+$route27N = json_decode($file);
 
+//Get Route 36
+$file = file_get_contents('Route36E.json');
+$route36E = json_decode($file);
+$file = file_get_contents('Route36W.json');
+$route36W = json_decode($file);
+
+//Get Route 109
+$file = file_get_contents('Route109S.json');
+$route109S = json_decode($file);
+$file = file_get_contents('Route109N.json');
+$route109N = json_decode($file);
+
+function get_next_bus(route, direction);
 
 
 $items = array(
