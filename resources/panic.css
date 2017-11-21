@@ -62,9 +62,9 @@ table {
 }
 
 .vertical-center {
-	top: 50%;
-	position: relative;
-	margin-top: -0.5em;
+	/*top: 50%;*/
+	/*position: relative;*/
+	margin-top: 1em;
 	height: 1em;	
 }
 
@@ -81,10 +81,10 @@ padding:1.5em;
 }
 
 .time {
-	font-size:40px;
+	font-size:48px;
 }
 .date {
-	margin-top: 2em;
+	margin-top: 0.75em;
 	font-size:35px;
 }
 .center {
