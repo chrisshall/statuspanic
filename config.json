@@ -13,7 +13,7 @@
      "name": "clock",
       "class": "mini padd",
       "width": 220,
-      "height": 120,
+      "height": 200,
       "update": 60, 
       "args": {
         "timezone": "America/New_York",
