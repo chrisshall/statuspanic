@@ -61,7 +61,14 @@
       "name": "travel",
       "width": 400,
 	  "height": 175,
-      "update": 120,
+      "update": 150,
+      "class": "mini bluegradient"
+    },
+		{
+      "name": "travel_back",
+      "width": 400,
+	  "height": 175,
+      "update": 150,
       "class": "mini bluegradient"
     },
     {
@@ -75,6 +82,13 @@
       "width": 200,
       "update": 10,
       "class": "mini bluegradient"
-    }	
+    },
+	{
+	  "name": "skype",
+	  "width": 600,
+	  "height": 600,
+	  "update": 300,
+	  "class": "modules mini"
+	  }
   ]
 }

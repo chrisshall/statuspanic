@@ -22,7 +22,7 @@ $data = json_decode($string, true);
 date_default_timezone_set('America/New_York');
 $datetime = new DateTime();
 // If the market it open (from 9:30AM - 4:00PM)
-if ($datetime->format('H') > 9 || ($datetime->format('H') == 9 && $datetime->format('i') >= 30)){
+if (($datetime->format('H') > 9 || ($datetime->format('H') == 9 && $datetime->format('i') >= 30)) && $datetime->format('H') < 16){
 	$start_price = $data['Time Series (5min)'][date('Y-m-d',time() -60*60*24).' 16:00:00']['4. close'];
 	$minute = $datetime->format('i');
 	$minute = $minute - $minute%5;

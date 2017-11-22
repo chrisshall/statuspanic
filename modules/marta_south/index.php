@@ -63,6 +63,7 @@ $southbound = array(
     '109|red'  => $next109S
 	);
 
+	echo "Southbound Buses";
 ?>
 
 <ul>

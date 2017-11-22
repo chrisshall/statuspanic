@@ -64,7 +64,7 @@ $northbound = array(
     '36|blue'  => $next36E,
     '109|blue' => $next109N
 	);
-
+echo "Northbound Buses";
 ?>
 
 <ul>
