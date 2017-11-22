@@ -74,13 +74,13 @@
     {
       "name": "marta_north",
       "width": 200,
-      "update": 10,
+      "update": 5,
       "class": "mini bluegradient"
     },
 	{
       "name": "marta_south",
       "width": 200,
-      "update": 10,
+      "update": 5,
       "class": "mini bluegradient"
     },
 	{
