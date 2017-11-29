@@ -94,6 +94,22 @@
 	height: 34px;
 	width:150px;
 }
+.calendar .td_grey td{
+	background-color: #1c2020;
+	text-align: center;
+	padding-left: 10px;
+	margin: 10px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	/*background: -webkit-gradient(linear, left top, left bottom, from(#333), to(#222), color-stop(0.5, #222), color-stop(0.5, #333));
+	border-bottom: 1px solid #555;*/
+	vertical-align: middle;
+	font-size:80%;
+	height: 34px;
+	width:150px;
+	color:gray;
+}
+
 
 .calendar .alt td {
 	background-color: #1f222d;

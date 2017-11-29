@@ -1,18 +1,9 @@
 <?php
 
-/* DATA */
-
-/*$num = rand(-99, 99);
-
-if (rand(0,4) == 0) {
-    $num = 0;
-}
-
-if (!empty($_GET['value'])) 
-    $num = $_GET['value'];
-*/
-//$username_key = 'fdf625991e77c7207ee9167235405781';
-//$password_key = '7392c7238335493c203f8c529c51bf4d';
+/* 
+ *	Stocks Module
+ */
+ 
 try{
 $string = file_get_contents('https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=NCR&interval=5min&outputsize=full&apikey=AZT5Q3UOFPEOCJYT');
 $data = json_decode($string, true);

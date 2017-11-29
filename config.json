@@ -39,15 +39,7 @@
         "height": 300
       }
     },
-	 {
-      "name": "linegraph",
-      "width": 1000,
-      "update": 0, 
-      "class": "middle",
-      "args": {
-        "height": 300
-      }
-    },
+
 	    {
       "name": "space",
       "width": 1100,
@@ -94,9 +86,17 @@
     },
 	{
 	  "name": "calendar",
-	  "width": 1100,
-	  "height": 1100,
-	  "update": 0
-	}
+	  "width": 1000,
+	  "height": 1000,
+	  "update": 0,
+	  "class": "middle"
+	},
+	{
+	 "name": "linegraph",
+	  "width": 1000,
+	  "height": 1000,
+	  "update": 0,
+	  "class": "middle"
+	  }
   ]
 }

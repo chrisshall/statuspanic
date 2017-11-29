@@ -1,4 +1,8 @@
 <?php
+/*
+ * Travel To Module
+ */
+
 //Get Travel Times
 $travel = file_get_contents('https://maps.googleapis.com/maps/api/distancematrix/json?origins=860+Spring+St+NW,+Atlanta,+GA&destinations=Duluth,+GA|Mall+of+GA+Buford,+GA|Athens,+GA|&departure_time=now&traffic_model=best_guess&key=AIzaSyBQ_PLwliFdOCBWiIed_s4IBrZc1q7DZYo');
 $data = json_decode($travel, true);
