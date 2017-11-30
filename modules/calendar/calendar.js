@@ -1,0 +1,36 @@
+function goBack(month_year){
+	var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+	var date_array = month_year.split(" ");
+	var month = date_array[0];
+	var year = date_array[1];
+	var index = months.indexOf(month);
+	
+	if (index-1 < 0){
+		var date = "December "+ (year-1);
+		index=11;
+	}
+	else{
+		var date = months[index-1] + " " + year;
+	}
+	//console.log(index);
+	document.getElementById('month').innerHTML = date;
+	
+}
+function goAhead(month_year){
+	var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+	var date_array = month_year.split(" ");
+	var month = date_array[0];
+	var year = date_array[1];
+	var index = months.indexOf(month);
+	
+	if (index+1 > 11){
+		year = parseInt(year);
+		var date = "January "+ (year+1);
+		index = 0;
+	}
+	else{
+		var date = months[index+1] + " " + year;
+	}
+	document.getElementById('month').innerHTML = date;
+}	
+

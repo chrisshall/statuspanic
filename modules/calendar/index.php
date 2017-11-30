@@ -7,21 +7,8 @@ $calendar = Array();
 date_default_timezone_set('America/New_York');
 $date = new DateTime();
 
-/* Get array of months */
-$months = Array(
-			1  => 'January',
-			2  => 'February',
-			3  => 'March',
-			4  => 'April',
-			5  => 'May',
-			6  => 'June',
-			7  => 'July',
-			8  => 'August',
-			9  => 'Spetember',
-			10 => 'October',
-			11 => 'November',
-			12 => 'December');
 
+//Get month and year of what's in the calendar title
 
 
 // return today's date as an int (i.e 24)
@@ -61,59 +48,16 @@ for ($col=0;$col<=6;$col++){
 	}
 	//echo "<br>";
 }
-
-
-
-
 ?>
 
 
 
 <html>
 <div class='calendar' >
-	<script type="text/javascript">
-		
-			function getTitle(){
-				var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-				var current_month = new Date();
-				current_month = months[month.getMonth()];
-				//document.getElementById('month').inngerHTML = current_month + " " + Date.getFullYear();
-				document.getElementById('month').innerHTML = (current_month + " " + Date.getFullYear());
-				alert(current_month + " " + Date.getFullYear());
-
-			}
-			function goBack(month,year){
-				var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
-				else if (month < 0){
-					var date = "December "+ (year-1);
-				}
-				else{
-					var date = months[month-1] + " " + year;
-				}
-				var test = "test";
-				document.getElementById('month').innerHTML = test;
-				alert(test);
-			}
-			function goAhead(month,year){
-				var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
-				if (month > 11){
-					var date = "January "+ (year+1);
-				}
-				else{
-					var date = months[month-1] + " " + year;
-				}
-				document.getElementById('month').innerHTML = date;
-			}
-			function test(){
-				alert("This is a test");
-			}
-			
-		</script>
-		<button class="button" id="lastmonth" style="float: left" onclick="goBack(<?php echo date('n')-1?>,<?php echo date('Y')?>);"> < </button>
-		<button class="button" onclick="test()" type="input" id="nextmonth" style="float: right"> > </button>
-		<div id="month" onload="getTitle()" style="font-size: 30px"> <?php echo date('F Y')?> </div>	
+	<script src="modules/calendar/calendar.js"></script>	
+		<button class="button" id="lastmonth" style="float: left" onclick="goBack(document.getElementById('month').innerHTML)"> < </button>
+		<button class="button" onclick="goAhead(document.getElementById('month').innerHTML)" id="nextmonth" style="float: right"> > </button>
+		<div id="month" style="font-size: 30px"><?php echo date('F Y')?></div>	
 		
 </div>
 

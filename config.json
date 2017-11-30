@@ -36,10 +36,10 @@
       "update": 0, 
       "class": "middle",
       "args": {
-        "height": 300
+        "height": 300,
+		"width": 100
       }
     },
-
 	    {
       "name": "space",
       "width": 1100,
@@ -86,17 +86,10 @@
     },
 	{
 	  "name": "calendar",
-	  "width": 1000,
-	  "height": 1000,
+	  "width": 1100,
+	  "height": 1100,
 	  "update": 0,
-	  "class": "middle"
-	},
-	{
-	 "name": "linegraph",
-	  "width": 1000,
-	  "height": 1000,
-	  "update": 0,
-	  "class": "middle"
-	  }
+	  "class": "modules"
+	}
   ]
 }
