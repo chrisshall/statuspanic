@@ -1,0 +1,31 @@
+.input {
+border: 1pt solid gray;
+padding: 2pt;
+overflow: hidden;
+white-space: nowrap;
+}
+
+.button {
+border: 1pt solid gray;
+cursor: pointer;
+padding: 2pt 5pt;
+margin-top:5px;
+display: inline-block;
+}
+
+.button:hover {
+    background: lightgray;
+}
+
+.signinframe > .button {
+    margin-top: 8pt;
+}
+
+.userdetails {
+    border: 1pt solid lightgray;
+    padding:5px;
+}
+
+.logoutbox, .loginbox {
+    padding: 5px 0 10px 0;
+}

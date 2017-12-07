@@ -29,7 +29,7 @@
       "args": {
         "zipcode": "30096"
       }
-    },
+    },	
     {
       "name": "bargraph",
       "width": 1000,
@@ -86,8 +86,8 @@
     },
 	{
 	  "name": "calendar",
-	  "width": 1100,
-	  "height": 1100,
+	  "width": 1000,
+	  "height": 1000,
 	  "update": 0,
 	  "class": "modules"
 	}
