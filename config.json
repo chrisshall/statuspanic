@@ -76,6 +76,12 @@
 	  "update": 0,
 	  "class": "mini"
 	},
+		    {
+      "name": "space",
+      "width": 1100,
+	  "height": 200,
+      "update": 0
+    },
     {
       "name": "bargraph",
       "width": 1000,
