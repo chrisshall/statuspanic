@@ -19,7 +19,12 @@
     </style>
   </head>
   <body>
-    <div id="map"></div>
+    <div id="map" style="overflow: auto;background: -webkit-gradient(linear, left top, left bottom, from(#333), to(#222), color-stop(0.5, #222), color-stop(0.5, #333));
+	color:white;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+"></div>
     <script type="text/JavaScript">
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {

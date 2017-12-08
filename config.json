@@ -29,26 +29,11 @@
       "args": {
         "zipcode": "30096"
       }
-    },	
-    {
-      "name": "bargraph",
-      "width": 1000,
-      "update": 0, 
-      "class": "middle",
-      "args": {
-        "height": 300,
-		"width": 100
-      }
     },
 	    {
       "name": "space",
       "width": 1100,
 	  "height": 30,
-      "update": 0
-    },
-    {
-      "name": "grid",
-      "width": 1000,
       "update": 0
     },
 	{
@@ -65,7 +50,7 @@
       "update": 150,
       "class": "mini bluegradient"
     },
-		{
+	{
       "name": "travel_back",
       "width": 400,
 	  "height": 175,
@@ -90,6 +75,21 @@
 	  "height": 1000,
 	  "update": 0,
 	  "class": "mini"
-	}
+	},
+    {
+      "name": "bargraph",
+      "width": 1000,
+      "update": 0, 
+      "args": {
+        "height": 300,
+		"width": 100
+      }
+    },
+    {
+      "name": "grid",
+      "width": 1000,
+      "update": 0
+    }
+	
   ]
 }

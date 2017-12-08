@@ -82,8 +82,8 @@ $bar_width = floor(min($max_bar_width, ($max_width - ($total_outer * $num_bars))
 $final_padding = max($default_padding, ($max_width - (($bar_width + $total_outer) * $num_bars)) / $num_bars / 2);
 ?>
 
-<div class='jumbo middle'>
-	</br>SCER Analytics
+<div style="font-size: 48px; text-align:center">
+	SCER Analytics
 </div>
 
 <div>
