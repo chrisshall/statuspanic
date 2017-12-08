@@ -39,20 +39,20 @@
 	{
 	  "name": "maps",
 	  "width": 600,
-	  "height": 600,
+	  "height": 615,
 	  "update": 300,
 	  "class": "modules mini"
 	  },
 	{
       "name": "travel",
-      "width": 400,
+      "width": 425,
 	  "height": 175,
       "update": 150,
       "class": "mini bluegradient"
     },
 	{
       "name": "travel_back",
-      "width": 400,
+      "width": 425,
 	  "height": 175,
       "update": 150,
       "class": "mini bluegradient"
@@ -94,6 +94,13 @@
     {
       "name": "grid",
       "width": 1000,
+      "update": 0
+    },
+	{
+      "name": "linegraph",
+      "class": "mini middle",
+      "width": 1000,
+      "height": 800,
       "update": 0
     }
 	

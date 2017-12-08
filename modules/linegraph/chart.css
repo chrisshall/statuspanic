@@ -1,0 +1,7 @@
+﻿.chart {
+	
+	border-radius: 10px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#333), to(#222), color-stop(0.5, #222), color-stop(0.5, #333));
+
+	
+}
