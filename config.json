@@ -86,10 +86,10 @@
     },
 	{
 	  "name": "calendar",
-	  "width": 1000,
+	  "width": 1050,
 	  "height": 1000,
 	  "update": 0,
-	  "class": "modules"
+	  "class": "mini"
 	}
   ]
 }

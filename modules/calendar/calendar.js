@@ -1,91 +1,75 @@
-//var month_year_string = document.getElementById('month').innerHTML;
+//Create the GUI form
 
-function goBack(month_year){
-	var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-	var date_array = month_year.split(" ");
-	var month = date_array[0];
-	var year = date_array[1];
-	var index = months.indexOf(month);
-	
-	if (index-1 < 0){
-		var date = "December "+ (year-1);
-		index=11;
-	}
-	else{
-		var date = months[index-1] + " " + year;
-	}
-	//console.log(index);
-	//setMonthYear(date);
-	document.getElementById('month').innerHTML = date;
-	//console.log(date);
-	$.post("modules/calendar/index.php",{month_year: date},function(data){
-			$('#result').html(data);
-	});
+function doGet() {
+  var app = UiApp.createApplication().setTitle('Form and Calendar Events');
+  
+  //Create a penel which holds all the form elelemnts
+  var panel = app.createVerticalPanel().setId('panel');
+  
+  //Create the form elelemnts
+  var eventDateLabel = app.createLabel('Event Date:');
+  var evenDate = app.createDateBox().setId('eventDate');
+  var eventTitleLabel = app.createLabel('Event title:');
+  var eventTitle = app.createTextBox().setName('eventTitle').setId('eventTitle');
+  var eventDeatilLabel = app.createLabel('Event Details:');
+  var eventDetail = app.createTextArea()
+      .setSize('200', '100').setId('eventDetail').setName('eventDetail');
+    var btn = app.createButton('createEvents');
+  
+  //Create handler which eill execute 'createEvents(e)' on clicking the button
+  var handler = app.createServerClickHandler('createEvents');
+  handler.addCallbackElement(panel);
+  //Add this handler to the button
+  btn.addClickHandler(handler);
+  
+  //Add all the elemnts to the panel 
+  panel.add(eventDateLabel)
+    .add(evenDate)
+    .add(eventTitleLabel)
+    .add(eventTitle)
+    .add(eventDeatilLabel)
+    .add(eventDetail)
+    .add(btn);
+  //Add this panel to the application
+  app.add(panel);
+  //return the application
+  return app;
 }
-function setMonthYear(month_year){
-	month_year_string = month_year;
+
+function createEvents(e){
+  
+  //Get the active application
+  var app = UiApp.getActiveApplication();
+  
+  try{
+    //get the entries;
+    var eventDate = e.parameter.eventDate;
+    var eventTitle = e.parameter.eventTitle;
+    var eventDetails = e.parameter.eventDetail;
+    
+    //Get the calendar
+    var cal = CalendarApp.getCalendarsByName('Calendar-Name')[0];//Change the calendar name
+    var eventStartTime = eventDate;
+    //End time is calculated by adding an hour in the event start time 
+    var eventEndTime = new Date(eventDate.valueOf()+60*60*1000);
+    //Create the events
+    cal.createEvent(eventTitle, eventStartTime,eventEndTime ,{description:eventDetails});
+    
+    //Log the entries in a spreadsheet
+    var ss = SpreadsheetApp.openById('Spreadsheet-Key');//Change the spreadhseet key to yours
+    var sheet = ss.getSheets()[0];
+    sheet.getRange(sheet.getLastRow()+1, 1, 1, 5).setValues([[new Date(), eventDate,eventTitle, eventDetails, 'Event created']]);
+    
+    //Show the confirmation message
+    app.add(app.createLabel('Event created Successfully'));
+    //make the form panel invisible
+    app.getElementById('panel').setVisible(false);
+    return app;
+  }
+  
+  //If an error occurs, show it on the panel
+  catch(e){
+    app.add(app.createLabel('Error occured: '+e));
+    return app;
+  }
 }
-
-function getMonthYear(){
-	return month_year_string;
-}
-	
-
-function goAhead(month_year){
-	var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-	var date_array = month_year.split(" ");
-	var month = date_array[0];
-	var year = date_array[1];
-	var index = months.indexOf(month);
-	
-	if (index+1 > 11){
-		year = parseInt(year);
-		var date = "January "+ (year+1);
-		index = 0;
-	}
-	else{
-		var date = months[index+1] + " " + year;
-	}
-	//setMonthYear(date);
-	document.getElementById('month').innerHTML = date;
-	$.post("modules/calendar/index.php",{month_year: date},function(data){
-			$('#result').html(data);
-			console.log(data);
-	});
-}	
-/*
-$('#nextmonth').click(function(){
-	$.ajax({
-		type: 'POST',
-		url: '/modules/calendar/index.php',
-		data: {'month_year': month_year_string},
-		datatype: 'text',
-		success: function(data){
-			//console.log(month_year_string);
-			$('#result').html(data);
-		}
-	});
-});
-$('#lastmonth').click(function(){
-	$.ajax({
-		type: 'POST',
-		url: '/modules/calendar/index.php',
-		data: {'month_year': month_year_string},
-		datatype: 'text',
-		success: function(data){
-			$('#result').html(data);
-		}
-		
-	});
-});*/
-
-/*if (window.XMLHttpRequest) {
-  xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function () {
-    if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-      alert('form was submitted');
-    }
-  };
-  xmlhttp.open("POST", "modules/calendar/index.php", true);
-  xmlhttp.send("month_year="+month_year_string);
-}*/
