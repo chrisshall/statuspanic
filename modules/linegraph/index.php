@@ -145,6 +145,12 @@ $closed_array = array($jan, $feb, $mar, $apr, $may, $jun, $jul, $aug, $sep, $oct
 
         var options = {
           title: 'Number of SCERs Opened vs. Closed in 2017',
+		  titleTextStyle: {
+			  color: 'black',
+			  fontSize: 26,
+			  bold: false,
+			  italic: false
+			  },
           curveType: 'function',
           legend: { position: 'bottom' },
 		  colors: ['#000000', '#f00000'],
