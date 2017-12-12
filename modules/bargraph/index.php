@@ -96,7 +96,7 @@ $final_padding = max($default_padding, ($max_width - (($bar_width + $total_outer
     $top_offset = $_GET['height'] - $bar_height;
     
 ?>
-    <div class='bar' style='margin-top: <?php echo $top_offset . 'px; width: ' .
+    <div class='bar' style='margin-top: <?php echo ($top_offset) . 'px; width: ' .
                             $bar_width . 'px; padding: 0 ' . $final_padding . 'px;' ?>'>
         <div class='header'><?php echo '<span class="total">'. $bar->height .'</span> / <span class="remaining">'. $bar->remaining .'</span>'; ?></div>
         <div class='view' id='bar_<?php echo $count ?>' style='height: <?php echo $bar_height; ?>px;'></div>
