@@ -137,7 +137,7 @@ $dec = 0;
 if (is_array($scer_array)){
 	foreach ($scer_array as $scer){
 		try{
-			if ($scer['date_recvd'] > $jan_first){
+			if ($scer['date_recvd'] > 42005){
 				if ($scer['date_recvd'] < 42036)
 					$jan++;
 				elseif ($scer['date_recvd'] < 42064)
@@ -186,26 +186,26 @@ $dec = 0;
 if (is_array($scer_array)){
 	foreach ($scer_array as $scer){
 		try{
-			if ($scer['date_recvd'] > $jan_first){
+			if ($scer['date_recvd'] > 42005){
 				// if we received the scer this year and it is closed or rejected OR
 				// if the "Need_Date" is set for this year
 				if ($scer['date_recvd'] < 42036 && (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
 					$jan++;
 				elseif ($scer['date_recvd'] < 42064 && (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
 					$feb++;
-				elseif ($scer['date_recvd'] <  42095&& (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
+				elseif ($scer['date_recvd'] < 42095 && (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
 					$mar++;
 				elseif ($scer['date_recvd'] < 42125 && (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
 					$apr++;
-				elseif ($scer['date_recvd'] <  42156 && (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
+				elseif ($scer['date_recvd'] < 42156 && (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
 					$may++;
-				elseif ($scer['date_recvd'] < 42186&& (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
+				elseif ($scer['date_recvd'] < 42186 && (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
 					$jun++;
-				elseif ($scer['date_recvd'] <  42217&& (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
+				elseif ($scer['date_recvd'] < 42217 && (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
 					$jul++;
 				elseif ($scer['date_recvd'] < 42248 && (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
 					$aug++;
-				elseif ($scer['date_recvd'] <  42278&& (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
+				elseif ($scer['date_recvd'] < 42278 && (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
 					$sep++;
 				elseif ($scer['date_recvd'] < 42309 && (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
 					$oct++;
@@ -330,7 +330,29 @@ if (is_array($scer_array)){
 
 }
 
+
+/***************************************************************************************************************
+***																											 ***
+*								Bar Graph of SCERS completed vs active in 2017 								   *
+***																											 ***			
+***************************************************************************************************************/
+	$active = 0;
+	$closed = 0;
+	$jan_first_2017 = 42736;
+	foreach ($scer_array as $scer){
+		if ($scer['date_recvd'] > $jan_first_2017){
+			if ($scer['status_code'] == 'c' || $scer['status_code'] == 'r'){
+				$closed++;
+			}
+			else
+				$active++;
+		}
+	}
+
+
 ?>
+
+<!--------------------------  Start HTML -------------------------------------------->
 
   <head>
   <!-- Import google chart loader since bootstrapping doesn't seem to work -->
@@ -947,49 +969,105 @@ if (is_array($scer_array)){
 	  }
 	  
 	  
+	  <!------		Active vs Closed Bar Graph 		----------->
+	  
+	  google.charts.load('current', {'packages':['corechart']});
+	  google.charts.setOnLoadCallback(drawBar);
+	  
+	  function drawBar(){
+		  
+		var closed_2017 = <?php echo $closed ?>;
+		var active_2017 = <?php echo $active ?>;
+		
+		var bar_data = google.visualization.arrayToDataTable([
+			["Closed", 'Active', {role: 'style'}],
+			['Closed', closed_2017, '#003380'],
+			["Active", active_2017, '#5e5e5e']]);
+		  
+	  var view = new google.visualization.DataView(bar_data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);  
+		  
+		var options_bar = {
+			title: "Active SCERS vs Closed ",
+			bar: {groupWidth: "95%"},
+			hAxis: {
+                minValue:0,
+                viewWindow: {
+                    min: 0
+                }
+            },
+			annotations: {
+				textStyle: {
+					fontName: 'Times-Roman',
+					fontSize: 26,
+					bold: true,
+					italic: false,
+				}
+			}
+		}; 
+		 
+		var bar = new google.visualization.BarChart(document.getElementById('bar_graph'));
+			
+		bar.draw(view,options_bar);
+		  
+	  }
+	  
 	  
 	  
 </script>
   </head>
-  <body class="chart">
-		<div  class="chart" id="curve_chart" style=
+  <div style="white-space:nowrap; overflow-x: scroll; height: 650px; overflow-y:hidden">
+		<div style="display:inline-block">
+			<div  class="chart" id="curve_chart" style=
+				"width: 960px; 
+				height: 500px;
+				padding: 20px;
+				border-radius: 10px;
+				background: -webkit-gradient(linear, left top, left bottom, from(#333), to(#222), color-stop(0.5, #222), color-stop(0.5, #333));">
+			</div>
+			<div>
+				<button id="b2017" class="button" onclick="btn2017Clicked()" style=
+					"background: -webkit-gradient(linear, left top, left bottom, from(#333), to(#222), color-stop(0.5, #222), color-stop(0.5, #333));
+					color:white;
+					-webkit-border-radius: 10px;
+					-moz-border-radius: 10px;
+					padding: 10px;
+					border-radius: 5px;
+					font-size: 30px">
+					Show 2017</button>
+				<button id="b2016" class="button" onclick="btn2016Clicked()" style=
+					"background: -webkit-gradient(linear, left top, left bottom, from(#333), to(#222), color-stop(0.5, #222), color-stop(0.5, #333));
+					color:white;
+					-webkit-border-radius: 10px;
+					-moz-border-radius: 10px;
+					padding: 10px;
+					border-radius: 5px;
+					font-size: 30px">
+					Show 2016</button>
+				<button id="b2015" class="button" onclick="btn2015Clicked()"style=
+					"background: -webkit-gradient(linear, left top, left bottom, from(#333), to(#222), color-stop(0.5, #222), color-stop(0.5, #333));
+					color:white;
+					-webkit-border-radius: 10px;
+					-moz-border-radius: 10px;
+					padding: 10px;
+					border-radius: 5px;
+					font-size: 30px">
+					Show 2015</button>		
+			</div>
+		</div>
+		<div  class="chart" id="bar_graph" style=
 			"width: 960px; 
 			height: 500px;
 			padding: 20px;
+			margin-bottom:39px;
 			border-radius: 10px;
+			display: inline-block;
 			background: -webkit-gradient(linear, left top, left bottom, from(#333), to(#222), color-stop(0.5, #222), color-stop(0.5, #333));">
-		</div> 
-		
-		<button id="b2017" class="button" onclick="btn2017Clicked()" style=
-			"background: -webkit-gradient(linear, left top, left bottom, from(#333), to(#222), color-stop(0.5, #222), color-stop(0.5, #333));
-			color:white;
-			-webkit-border-radius: 10px;
-			-moz-border-radius: 10px;
-			margin-top: 1em;
-			padding: 10px;
-			border-radius: 5px;
-			font-size: 30px">
-			Show 2017</button>
-		<button id="b2016" class="button" onclick="btn2016Clicked()" style=
-			"background: -webkit-gradient(linear, left top, left bottom, from(#333), to(#222), color-stop(0.5, #222), color-stop(0.5, #333));
-			color:white;
-			-webkit-border-radius: 10px;
-			-moz-border-radius: 10px
-			margin-top: 1em;
-			padding: 10px;
-			border-radius: 5px;
-			font-size: 30px">
-			Show 2016</button>
-		<button id="b2015" class="button" onclick="btn2015Clicked()"style=
-			"background: -webkit-gradient(linear, left top, left bottom, from(#333), to(#222), color-stop(0.5, #222), color-stop(0.5, #333));
-			color:white;
-			-webkit-border-radius: 10px;
-			-moz-border-radius: 10px;
-			margin-top: 1em;
-			padding: 10px;
-			border-radius: 5px;
-			font-size: 30px">
-			Show 2015</button>
-		
-  </body>
+		</div>
+  </div>
 </html>
