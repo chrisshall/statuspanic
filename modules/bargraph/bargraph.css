@@ -106,6 +106,23 @@
 	border-right-color: #808080;
 }
 
+#bar2_1 {
+	background: #FABD15;
+	border-color: #FABD15;
+	border-left-color: #fed615;
+	border-top-color: #fed615;
+	border-right-color: #d5a110;
+}
+
+#bar2_2 {
+	background: #49C817;
+	border-color: #49C817;
+	border-left-color: #4fdd15;
+	border-top-color: #4fdd15;
+	border-right-color: #38a410;	
+}
+
+
 
 
 

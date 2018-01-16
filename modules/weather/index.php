@@ -48,20 +48,17 @@ function displayIcon($array){
 ?>
 
 <html>
-<table>
-  <tr>
-    <td>
-<div>
+
+<div  style="margin-top:2em; margin-left:0.5em; float: left">
     <div class='jumbo'>
         <?php echo displayCurrentIcon($icon_url);
 		echo $data_current['temp_f'] . '&deg; F, ' . $data_current['weather'];
 		?>
     </div>
-    <div><?php echo $data_current['display_location']['zip'] ?> / <?php echo $data_current['display_location']['city'] ?></div>
+    <div style="margin-left:2px"><?php echo $data_current['display_location']['zip'] ?> / <?php echo $data_current['display_location']['city'] ?></div>
 </div>
-	</td>
-<td>
-<div>
+
+<div style="float: left; margin:10px;">
     <div>
         <?php echo displayIcon($data_forecast['0']);
 		echo  $data_forecast['0']['high']['fahrenheit'] . '&deg; F' ?> / 
@@ -69,9 +66,8 @@ function displayIcon($array){
     </div>
     <div><?php echo $data_forecast['0']['conditions'] ?></div>
 </div>
-	</td>
-	<td>
-	<div>
+
+	<div style="float: left; margin:10px;">
     <div>
         <?php echo displayIcon($data_forecast['1']);
 		echo  $data_forecast['1']['high']['fahrenheit'] . '&deg; F' ?> / 
@@ -79,9 +75,8 @@ function displayIcon($array){
     </div>
     <div><?php echo $data_forecast['1']['conditions'] ?></div>
 </div>
-	</td>
-	<td>
-	<div>
+
+	<div style="float: left; margin:10px;">
     <div>
         <?php echo displayIcon($data_forecast['2']);
 		echo $data_forecast['2']['high']['fahrenheit'] . '&deg; F' ?> / 
@@ -89,10 +84,7 @@ function displayIcon($array){
     </div>
     <div><?php echo $data_forecast['2']['conditions'] ?></div>
 </div>
-	</td>
-	
-  </tr>
-</table>
+
 
 
 

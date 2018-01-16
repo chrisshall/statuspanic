@@ -189,29 +189,29 @@ if (is_array($scer_array)){
 			if ($scer['date_recvd'] > 42005){
 				// if we received the scer this year and it is closed or rejected OR
 				// if the "Need_Date" is set for this year
-				if ($scer['date_recvd'] < 42036 && (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
+				if ($scer['date_recvd'] < 42036 && (mb_strtolower($scer['status_code']) == 'c' || mb_strtolower($scer['status_code']) == 'r'))
 					$jan++;
-				elseif ($scer['date_recvd'] < 42064 && (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
+				elseif ($scer['date_recvd'] < 42064 && (mb_strtolower($scer['status_code']) == 'c' ||mb_strtolower($scer['status_code']) == 'r'))
 					$feb++;
-				elseif ($scer['date_recvd'] < 42095 && (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
+				elseif ($scer['date_recvd'] < 42095 && (mb_strtolower($scer['status_code']) == 'c' || mb_strtolower($scer['status_code']) == 'r'))
 					$mar++;
-				elseif ($scer['date_recvd'] < 42125 && (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
+				elseif ($scer['date_recvd'] < 42125 && (mb_strtolower($scer['status_code']) == 'c' || mb_strtolower($scer['status_code']) == 'r'))
 					$apr++;
-				elseif ($scer['date_recvd'] < 42156 && (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
+				elseif ($scer['date_recvd'] < 42156 && (mb_strtolower($scer['status_code']) == 'c' || mb_strtolower($scer['status_code']) == 'r'))
 					$may++;
-				elseif ($scer['date_recvd'] < 42186 && (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
+				elseif ($scer['date_recvd'] < 42186 && (mb_strtolower($scer['status_code']) == 'c' || mb_strtolower($scer['status_code']) == 'r'))
 					$jun++;
-				elseif ($scer['date_recvd'] < 42217 && (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
+				elseif ($scer['date_recvd'] < 42217 && (mb_strtolower($scer['status_code']) == 'c' || mb_strtolower($scer['status_code']) == 'r'))
 					$jul++;
-				elseif ($scer['date_recvd'] < 42248 && (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
+				elseif ($scer['date_recvd'] < 42248 && (mb_strtolower($scer['status_code']) == 'c' || mb_strtolower($scer['status_code']) == 'r'))
 					$aug++;
-				elseif ($scer['date_recvd'] < 42278 && (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
+				elseif ($scer['date_recvd'] < 42278 && (mb_strtolower($scer['status_code']) == 'c' || mb_strtolower($scer['status_code']) == 'r'))
 					$sep++;
-				elseif ($scer['date_recvd'] < 42309 && (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
+				elseif ($scer['date_recvd'] < 42309 && (mb_strtolower($scer['status_code']) == 'c' || mb_strtolower($scer['status_code']) == 'r'))
 					$oct++;
-				elseif ($scer['date_recvd'] < 42339 && (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
+				elseif ($scer['date_recvd'] < 42339 && (mb_strtolower($scer['status_code']) == 'c' || mb_strtolower($scer['status_code']) == 'r'))
 					$nov++;
-				elseif ($scer['date_recvd'] < 42369 && (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
+				elseif ($scer['date_recvd'] < 42369 && (mb_strtolower($scer['status_code']) == 'c' || mb_strtolower($scer['status_code']) == 'r'))
 					$dec++;
 			}
 		} catch(Exception $e){
@@ -297,29 +297,29 @@ if (is_array($scer_array)){
 			if ($scer['date_recvd'] > $jan_first){
 				// if we received the scer this year and it is closed or rejected OR
 				// if the "Need_Date" is set for this year
-				if ($scer['date_recvd'] < 42401 && (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
+				if ($scer['date_recvd'] < 42401 && (mb_strtolower($scer['status_code']) == 'c' || mb_strtolower($scer['status_code']) == 'r'))
 					$jan++;
-				elseif ($scer['date_recvd'] < 42430 && (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
+				elseif ($scer['date_recvd'] < 42430 && (mb_strtolower($scer['status_code']) == 'c' || mb_strtolower($scer['status_code']) == 'r'))
 					$feb++;
-				elseif ($scer['date_recvd'] < 42461 && (mb_strtolower($scer['status_,code']) == 'c' || $scer['status_code'] == 'r'))
+				elseif ($scer['date_recvd'] < 42461 && (mb_strtolower($scer['status_,code']) == 'c' || mb_strtolower($scer['status_code']) == 'r'))
 					$mar++;
-				elseif ($scer['date_recvd'] < 42491 && (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
+				elseif ($scer['date_recvd'] < 42491 && (mb_strtolower($scer['status_code']) == 'c' || mb_strtolower($scer['status_code']) == 'r'))
 					$apr++;
-				elseif ($scer['date_recvd'] < 42522 && (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
+				elseif ($scer['date_recvd'] < 42522 && (mb_strtolower($scer['status_code']) == 'c' || mb_strtolower($scer['status_code']) == 'r'))
 					$may++;
-				elseif ($scer['date_recvd'] < 42552 && (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
+				elseif ($scer['date_recvd'] < 42552 && (mb_strtolower($scer['status_code']) == 'c' || mb_strtolower($scer['status_code']) == 'r'))
 					$jun++;
-				elseif ($scer['date_recvd'] < 42583 && (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
+				elseif ($scer['date_recvd'] < 42583 && (mb_strtolower($scer['status_code']) == 'c' || mb_strtolower($scer['status_code']) == 'r'))
 					$jul++;
-				elseif ($scer['date_recvd'] < 42614 && (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
+				elseif ($scer['date_recvd'] < 42614 && (mb_strtolower($scer['status_code']) == 'c' || mb_strtolower($scer['status_code']) == 'r'))
 					$aug++;
-				elseif ($scer['date_recvd'] < 42644 && (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
+				elseif ($scer['date_recvd'] < 42644 && (mb_strtolower($scer['status_code']) == 'c' || mb_strtolower($scer['status_code']) == 'r'))
 					$sep++;
-				elseif ($scer['date_recvd'] < 42675 && (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
+				elseif ($scer['date_recvd'] < 42675 && (mb_strtolower($scer['status_code']) == 'c' || mb_strtolower($scer['status_code']) == 'r'))
 					$oct++;
-				elseif ($scer['date_recvd'] < 42705 && (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
+				elseif ($scer['date_recvd'] < 42705 && (mb_strtolower($scer['status_code']) == 'c' || mb_strtolower($scer['status_code']) == 'r'))
 					$nov++;
-				elseif ($scer['date_recvd'] < 42732 && (mb_strtolower($scer['status_code']) == 'c' || $scer['status_code'] == 'r'))
+				elseif ($scer['date_recvd'] < 42732 && (mb_strtolower($scer['status_code']) == 'c' || mb_strtolower($scer['status_code']) == 'r'))
 					$dec++;
 			}
 		} catch(Exception $e){
@@ -341,11 +341,40 @@ if (is_array($scer_array)){
 	$jan_first_2017 = 42736;
 	foreach ($scer_array as $scer){
 		if ($scer['date_recvd'] > $jan_first_2017){
-			if ($scer['status_code'] == 'c' || $scer['status_code'] == 'r'){
+			if (mb_strtolower($scer['status_code']) == 'c' || mb_strtolower($scer['status_code']) == 'r'){
 				$closed++;
 			}
 			else
 				$active++;
+		}
+	}
+	
+/***************************************************************************************************************
+***																											 ***
+*					Bar Graph of SCERS that Need Quote, In progress, Need Billed, Need Scoped	  			   *
+***																											 ***			
+***************************************************************************************************************/
+	$need_quote=0;
+	$need_billed=0;
+	$in_progress=0;
+	$need_scoping=0;
+	$jan_first_2017 = 42736;
+	$active2 =0;
+	foreach ($scer_array as $scer){
+		if ($scer['date_recvd'] > $jan_first_2017){
+			if (mb_strtolower($scer['status_code']) == 'a'){
+				$active2++;																// All SCERs with status 'a' are active
+				if(strpos(mb_strtolower($scer['need_date']), 'bill') !== false){		// if Bill is in the status, needs to be billed
+					$need_billed++;
+				}
+			}
+			else if (mb_strtolower($scer['status_code']) == 'q'){						//q means a quote has not been submitted
+				if(strpos(mb_strtolower($scer['need_date']), 'need quote') !== false){	// if 'need quote' is in status, it's been scoped.
+					$need_quote++;
+				}
+				else
+					$need_scoping++;
+			}
 		}
 	}
 
@@ -1017,6 +1046,59 @@ if (is_array($scer_array)){
 		  
 	  }
 	  
+	  <!------		Needs Billed/Scoped/Quote/In Progress SCER Bar Graph 	----------->
+	  
+	  google.charts.load('current', {'packages':['corechart']});
+	  google.charts.setOnLoadCallback(drawBar2);
+	  
+	  function drawBar2(){
+		  
+		var need_billed = <?php echo $need_billed ?>;
+		var need_quote = <?php echo $need_quote ?>;
+		var active = <?php echo $active2 ?>;
+		var need_scoping = <?php echo $need_scoping ?>;
+		
+		var bar_data2 = google.visualization.arrayToDataTable([
+			['SCER Status', 'Status', {role: 'style'}],
+			['Needs Scoping', need_billed, '#003380'],
+			['Needs Quote', need_quote, '#5e5e5e'],
+			['Currently Active', active, '#003380'],
+			['Needs Billed', need_scoping, '#5e5e5e']
+			]);
+			
+	  var view2 = new google.visualization.DataView(bar_data2);
+      view2.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);  
+		  
+		var options_bar2 = {
+			title: "Current SCER Statuses",
+			bar: {groupWidth: "95%"},
+			hAxis: {
+                minValue:0,
+                viewWindow: {
+                    min: 0
+                }
+            },
+			annotations: {
+				textStyle: {
+					fontName: 'Times-Roman',
+					fontSize: 26,
+					bold: true,
+					italic: false,
+				}
+			}
+		}; 
+		 
+		var bar2 = new google.visualization.BarChart(document.getElementById('bar_graph2'));
+			
+		bar2.draw(view2,options_bar2);
+		  
+	  }
+	  
 	  
 	  
 </script>
@@ -1061,6 +1143,15 @@ if (is_array($scer_array)){
 			</div>
 		</div>
 		<div  class="chart" id="bar_graph" style=
+			"width: 960px; 
+			height: 500px;
+			padding: 20px;
+			margin-bottom:39px;
+			border-radius: 10px;
+			display: inline-block;
+			background: -webkit-gradient(linear, left top, left bottom, from(#333), to(#222), color-stop(0.5, #222), color-stop(0.5, #333));">
+		</div>
+			<div  class="chart" id="bar_graph2" style=
 			"width: 960px; 
 			height: 500px;
 			padding: 20px;

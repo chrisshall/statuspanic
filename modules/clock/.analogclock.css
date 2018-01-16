@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+}
+/*body {
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/dark_embroidery.png);
+}*/
+
+#clock {
+  width: 110%;
+  height: 110%;
+  border-radius: 50%;
+  border: 5px double #333;
+  /*background: -webkit-radial-gradient(#333333, #000000);*/
+  background: radial-gradient(#333333, #000000);
+  /*margin: 2rem auto;*/
+  margin-left: -4px;
+  position: relative;
+}
+
+#hourhand, #minutehand, #secondhand {
+  position: absolute;
+  background: white;
+  -webkit-transform-origin: bottom center;
+          transform-origin: bottom center;
+  box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+#hourhand {
+  width: 4%;
+  height: 30%;
+  left: calc(50% - (4% / 2));
+  top: calc(50% - 30%);
+}
+
+#minutehand {
+  width: 2%;
+  height: 40%;
+  left: calc(50% - (2% / 2));
+  top: calc(50% - 40%);
+}
+
+#secondhand {
+  width: 1%;
+  height: 45%;
+  background: red;
+  left: calc(50% - (1% / 2));
+  top: calc(50% - 45%);
+}
