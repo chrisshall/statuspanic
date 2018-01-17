@@ -50,7 +50,7 @@ function displayIcon($array){
 <html>
 
 <div  style="margin-top:2em; margin-left:0.5em; float: left">
-    <div class='jumbo'>
+    <div class='mega'>
         <?php echo displayCurrentIcon($icon_url);
 		echo $data_current['temp_f'] . '&deg; F, ' . $data_current['weather'];
 		?>

@@ -5,7 +5,7 @@
      {
       "name": "stocks",
       "class": "mini middle",
-      "width": 200,
+      "width": 250,
       "height": 300,
       "update": 300
     },
@@ -44,8 +44,8 @@
     },
 	{
 	  "name": "maps",
-	  "width": 600,
-	  "height": 615,
+	  "width": 1100,
+	  "height": 900,
 	  "update": 300,
 	  "class": "modules mini"
 	  },
@@ -54,26 +54,26 @@
       "width": 425,
 	  "height": 175,
       "update": 150,
-      "class": "mini bluegradient"
+      "class": "mini bluegradient middle"
     },
 	{
       "name": "travel_back",
       "width": 425,
 	  "height": 175,
       "update": 150,
-      "class": "mini bluegradient"
+      "class": "mini bluegradient middle"
     },
     {
       "name": "marta_north",
       "width": 200,
       "update": 5,
-      "class": "mini bluegradient"
+      "class": "mini bluegradient middle"
     },
 	{
       "name": "marta_south",
       "width": 200,
       "update": 5,
-      "class": "mini bluegradient"
+      "class": "mini bluegradient middle"
     },
 	{
 	  "name": "calendar",

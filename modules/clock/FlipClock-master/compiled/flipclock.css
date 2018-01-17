@@ -37,13 +37,13 @@
 
 /* Main */
 .flip-clock-wrapper {
-  font: normal 11px "Helvetica Neue", Helvetica, sans-serif;
+  font: normal 15px "Helvetica Neue", Helvetica, sans-serif;
   -webkit-user-select: none; }
 
 .flip-clock-meridium {
   background: none !important;
   box-shadow: 0 0 0 !important;
-  font-size: 38px !important; }
+  font-size: 50px !important; }
 
 .flip-clock-meridium a { color: #efefef }
 
@@ -69,11 +69,11 @@
   /*float: left;*/
   display: inline-block;
   margin: 5px;
-  width: 60px;
-  height: 90px;
-  font-size: 80px;
+  width: 90px;
+  height: 130px;
+  font-size: 90px;
   font-weight: bold;
-  line-height: 87px;
+  line-height: 117px;
   border-radius: 6px;
   background: #000;
 }
@@ -85,7 +85,7 @@
   top: 0;
   width: 100%;
   height: 100%;
-  line-height: 87px;
+  /*line-height: 87px;*/
   text-decoration: none !important;
 }
 
@@ -129,7 +129,7 @@
 .flip-clock-wrapper ul li a div.up:after {
   content: "";
   position: absolute;
-  top: 44px;
+  top: 59px;
   left: 0;
   z-index: 5;
   width: 100%;
@@ -159,7 +159,7 @@
   text-align: center;
   background-color: #333;
   border-radius: 6px;
-  font-size: 70px; }
+  font-size: 90px; }
 
 .flip-clock-wrapper ul li a div.up div.inn {
   top: 0; }
@@ -184,7 +184,8 @@
   display: inline-block;
   position: relative;
   width: 20px;
-  height: 100px; }
+  height: 120px;
+  margin: 5px;}
 
 .flip-clock-divider:first-child {
   width: 0; }

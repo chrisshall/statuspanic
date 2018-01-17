@@ -56,7 +56,7 @@ catch(Exception $e){
 }
 ?>
 
-<div>    
+<div style="margin-top: 1em;">    
 	<span class='jumbo'> <?php echo 'NCR'."<br>"; if(isset($current_price)) echo $current_price; else echo "--"; ?> </span>
     <span class='<?php echo $class ?>' id='arrow_icon'><?php echo $code ?></span>
     <span class='mega'><?php echo $difference ?></span>
