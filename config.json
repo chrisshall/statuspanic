@@ -30,7 +30,7 @@
       "class": "middle",
       "width": 1000,
       "height": 200,
-      "update": 100, 
+      "update": 0, 
       "args": {
         "timezone": "America/New_York",
         "format": "g:i a"
@@ -39,7 +39,7 @@
 			    {
       "name": "space",
       "width": 1100,
-	  "height": 75,
+	  "height": 275,
       "update": 0
     },
 	{
