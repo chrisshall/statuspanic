@@ -1,109 +1,84 @@
-<!doctype html>
-<html lang="en">
-<!--Third party scripts or code, linked to or referenced from this web site, are licensed to you by the third parties that own such code, not by Microsoft, see ASP.NET Ajax CDN Terms of Use – http://www.asp.net/ajaxlibrary/CDN.ashx.-->
-    <head>
-        <meta charset="utf-8" />
-        <title>UCWA Samples Site</title>
-        <link rel="stylesheet" href="Styles.css" />
-        <link rel="stylesheet" href="//ajax.aspnetcdn.com/ajax/jquery.ui/1.8.20/themes/smoothness/jquery-ui.css" />
-        <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.2.min.js"></script>
-        <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jquery.ui/1.8.11/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
-        <script type="text/javascript" src="modules/skype/scripts/Site.js"></script>
-        <script type="text/javascript" src="modules/skype/scripts/GeneralHelper.js"></script>
-        <script type="text/javascript" src="modules/skype/scripts/MemoryStorage.js"></script>
-        <script type="text/javascript" src="modules/skype/scripts/LocalStorage.js"></script>
-        <script type="text/javascript" src="modules/skype/scripts/Cache.js"></script>
-        <script type="text/javascript" src="modules/skype/scripts/Transport.js"></script>
-        <script type="text/javascript" src="modules/skype/scripts/UcwaMain.js"></script>
-        <script type="text/javascript" src="modules/skype/scripts/AutoDiscovery.js"></script>
-        <script type="text/javascript" src="modules/skype/scripts/Authentication.js"></script>
-        <script type="text/javascript" src="modules/skype/scripts/Events.js"></script>
-        <script type="text/javascript" src="modules/skype/scripts/Mime.js"></script>
-        <script type="text/javascript" src="modules/skype/scripts/Index.js"></script>
-        <script type="text/javascript" src="modules/skype/scripts/Batch.js"></script>
-        <script type="text/javascript" src="modules/skype/scripts/OperationResource.js"></script>
-    </head>
-    <body>
-        <div class="wrapper">
-            <div class="header">
-                <h1>Unified Communications Web API Code Samples</h1>
+﻿<!doctype html>
+<html>
+<head>
+    <title>Skype Web SDK Samples Preview</title>
+    <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="modal"></div>
+    <div class="header">
+        <h1>Skype Web SDK Samples Preview</h1>
+    </div>
+    <div class="container">
+        <!--class:wrappingdiv nests other classes so that css applied to
+            descendents of wrappingdiv don't affect the conversation control -->
+        <div class="wrappingdiv">
+            <div class="menu">
+                <h2>Samples</h2>
+                <ul class="nav" id="tasklist">
+                    <li>
+                        <a id="sign-in" class="idleNav">Sign In</a>
+                    </li>
+                    <li>
+                        <a id="self" class="idleNav">Self</a>
+                    </li>
+                    <li>
+                        <a id="search" class="idleNav">Search</a>
+                    </li>
+                    <li>
+                        <a id="contact" class="idleNav">Contact</a>
+                    </li>
+                    <li>
+                        <a id="groups" class="idleNav">Groups</a>
+                    </li>
+                    <li>
+                        <a id="person-group-manager" class="idleNav">Person Group Manager</a>
+                    </li>
+                    <li>
+                        <a id="chat-service" class="idleNav">Chat Service</a>
+                    </li>
+                    <li>
+                        <a id="audio-video-manager" class="idleNav">Audio/Video</a>
+                    </li>
+                    <li>
+                        <a id="device-manager" class="idleNav">Device Manager</a>
+                    </li>
+                    <li>
+                        <a id="conference" class="idleNav">Conference</a>
+                    </li>
+                    <li>
+                        <a id="conversation-control" class="idleNav">Conversation Control</a>
+                    </li>
+                    <li>
+                        <a id="anonymous-join" class="idleNav">Join meeting</a>
+                    </li>
+
+                    <li>
+                        <a id="sign-out" class="idleNav">Sign out</a>
+                    </li>
+                </ul>
             </div>
-            <div class="main">
-                <div class="menu">
-                    <h2>Modules</h2>
-                    <ul class="nav">
-                        <li><a id="cache">Cache</a></li>
-                        <li><a id="transport">Transport</a></li>
-                        <li><a id="autoDiscovery">Auto-Discovery</a></li>
-                        <li><a id="authentication">Authentication</a></li>
-                        <li><a id="mime">Mime</a></li>
-                        <li><a id="events">Events</a></li>
-                        <li><a id="batch">Batch</a></li>
-                        <li><a id="operationResource">Operation Resource</a></li>
-                    </ul>
-                    <h2>Tasks</h2>
-                    <ul class="nav" id="tasklist">
-                        <li><a id="MeDashboard">Me Dashboard</a></li>
-                        <li><a id="Contacts">Contacts</a></li>
-                        <li><a id="ContactSearch">Contact Search</a></li>
-                        <li><a id="PresenceSub">Presence Subscription</a></li>
-                        <li><a id="IM">Instant Messaging</a></li>
-                        <li><a id="Meeting">Schedule a Meeting</a></li>
-                        <li><a id="CallViaWork">Call Via Work</a></li>
-                        <li><a id="AnonMeeting">Anonymous Meeting</a></li>
-                    </ul>
-                </div>
-                <div class="authContainer">
-                    <div id="preAuth">
-                        <p>Please login prior to viewing Modules and Tasks</p>
-                        <p>If you have questions about the API documentation, see <a target="_blank" href="http://ucwa.lync.com">here</a>.</p>
-                    </div>
-                    <div id="pickAuth">
-                        Where are you signing in?
-                        <ul>
-                            <li><a href="#" class="authPicker" target="auth">My own topology</a></li>
-                            <li><a href="#" class="authPicker" target="sandbox">The developer sandbox</a></li>
-                            <li><a href="#" class="authPicker" target="anonMeeting">Anonymous meeting join</a></li>
-                        </ul>
-                    </div>
-                    <div class="authOptions">
-                        <div id="auth">
-                            <div class="controls">
-                                <h3>Sign-in Address</h3>
-                                <input data-enterBinding="topoSignin" class="signinbox" id="username" />
-                            </div>
-                            <div class="controls">
-                                <h3>Password</h3>
-                                <input data-enterBinding="topoSignin" class="signinbox" id="password" type="password" />
-                            </div>
-                            <div class="controls">
-                                <a id="topoSignin" class="login">Login</a>
-                            </div>
-                        </div>
-                        <div id="sandbox">
-                            <div class="controls">
-                                <h3>Domain</h3>
-                                <input data-enterBinding="sandboxSignin" class="signinbox" id="domain" />
-                            </div>
-                            <div class="controls">
-                                <h3>Token</h3>
-                                <input data-enterBinding="sandboxSignin" class="signinbox" id="token" />
-                            </div>
-                            <div class="controls">
-                                <a id="sandboxSignin" class="login">Login</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="content">
-                    <div id="postAuth">
-                        <p>Please select a Module or Task for more information</p>
-                    </div>
-                </div>
-            </div>
+            <div class="content"></div>
         </div>
-        <div class="frame" id="container"></div>
-        <div class="modal"></div>
-    </body>
+        <div id="cc-conversations">
+        </div>
+    </div>
+    <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.2.min.js"></script>
+    <script src="//swx.cdn.skype.com/shared/v/1.2.15/SkypeBootstrap.min.js"></script>
+    <script src="../config.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="samples/scripts/sign-in.js"></script>
+    <script src="samples/scripts/self.js"></script>
+    <script src="samples/scripts/search.js"></script>
+    <script src="samples/scripts/contact.js"></script>
+    <script src="samples/scripts/groups.js"></script>
+    <script src="samples/scripts/person-group-manager.js"></script>
+    <script src="samples/scripts/chat-service.js"></script>
+    <script src="samples/scripts/audio-video-manager.js"></script>
+    <script src="samples/scripts/device-manager.js"></script>
+    <script src="samples/scripts/conference.js"></script>
+    <script src="samples/scripts/conversation-control.js"></script>
+    <script src="samples/scripts/anonymous-join.js"></script>
+    <script src="samples/scripts/sign-out.js"></script>
+</body>
 </html>

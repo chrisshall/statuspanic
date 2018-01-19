@@ -38,17 +38,20 @@ else{
 	$start_price = $data['Time Series (5min)'][date('Y-m-d',time() -60*60*24).' 16:00:00']['4. close'];
 }
 $difference = number_format((float)($current_price-$start_price),2,'.','');
-
+$current_price = number_format($current_price,2);
 /* DISPLAY */
-if ($start_price < $current_price) {
-    $class = 'uparrow';
-    $code = 'A';
-} elseif ($start_price > $current_price) {
-    $class = 'downarrow';
-    $code = 'A';
-} else {
-    $class = 'zero-block';
-    $code = 'K';
+
+if (isset($start_price)) {
+	if ($start_price < $current_price) {
+		$class = 'uparrow';
+		$code = 'A';
+	} elseif ($start_price > $current_price) {
+		$class = 'downarrow';
+		$code = 'A';
+	} else {
+		$class = 'zero-block';
+		$code = 'K';
+	}
 }
 }
 catch(Exception $e){
@@ -57,7 +60,7 @@ catch(Exception $e){
 ?>
 
 <div style="margin-top: 1em;">    
-	<span class='jumbo'> <?php echo 'NCR'."<br>"; if(isset($current_price)) echo $current_price; else echo "--"; ?> </span>
-    <span class='<?php echo $class ?>' id='arrow_icon'><?php echo $code ?></span>
-    <span class='mega'><?php echo $difference ?></span>
+	<span class='mega'> <?php echo 'NCR'."<br>"; if(isset($current_price)) echo $current_price; else echo "--"; ?> </span>
+    <span class='<?php echo $class ?>' id='arrow_icon' style="margin:10px;"><?php echo $code ?></span>
+    <span class='mega'><?php if(isset($current_price)) echo $difference; else echo "--"; ?></span>
 </div>

@@ -4,7 +4,7 @@
  */
 
 //Get Travel Times
-$travel = file_get_contents('https://maps.googleapis.com/maps/api/distancematrix/json?origins=860+Spring+St+NW,+Atlanta,+GA&destinations=Duluth,+GA|Mall+of+GA+Buford,+GA|Athens,+GA|&departure_time=now&traffic_model=best_guess&key=AIzaSyBQ_PLwliFdOCBWiIed_s4IBrZc1q7DZYo');
+$travel = file_get_contents('https://maps.googleapis.com/maps/api/distancematrix/json?origins=864+Spring+St+NW,+Atlanta,+GA&destinations=Duluth,+GA|Mall+of+GA+Buford,+GA|Athens,+GA|&departure_time=now&traffic_model=best_guess&key=AIzaSyBQ_PLwliFdOCBWiIed_s4IBrZc1q7DZYo');
 $data = json_decode($travel, true);
 
 //With Traffic as int in seconds
@@ -48,12 +48,12 @@ else
 
 $items = array(
     // 'bubble' => 'line'
-	 'd|' . $duluth_color => $traffic_time_duluth_text . ' to Duluth',
-	 'b|' . $buford_color => $traffic_time_buford_text . ' to Mall of GA',
-	 'a|' . $athens_color => $traffic_time_athens_text . ' to Athens'
+	 ',|' . $duluth_color => $traffic_time_duluth_text . ' to Duluth',
+	 '.|' . $buford_color => $traffic_time_buford_text . ' to Mall of GA',
+	 '-|' . $athens_color => $traffic_time_athens_text . ' to Athens'
 	 );
 	 
-	 echo 'Travel Time';
+	 echo 'Travel Time From NCR HQ';
 ?>
 
 <ul>

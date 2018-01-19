@@ -1,0 +1,118 @@
+<div class="person-group-manager">
+    <h2>Person Group Manager</h2>
+    <div class="signinframe">
+        <div id="show_readme" class="readme_button">
+            <h4>README</h4>
+        </div>
+        <div id="readme" class="readme" style="display:none">
+            This sample web app demonstrates group and person
+            management functionalities in skypeweb, including:
+            <ul>
+                <li>
+                    Group management:
+                    <ul>
+                        <li>creating a new user-defined group in the group list</li>
+                        <li>deleting a user-defined group from the group list</li>
+                        <li>renaming a user-defined group</li>
+                        <li>adding a DG to the group list</li>
+                        <li>removing a DG from the group list</li>
+                    </ul>
+                </li>
+                <li>
+                    Person management:
+                    <ul>
+                        <li>adding a person to a group</li>
+                        <li>removing a person from a group</li>
+                        <li>removing a person from all groups</li>
+                    </ul>
+                </li>
+            </ul>
+            For example, follow these instructions to run the scenario
+            of creating a new user-defined group and adding a person to the group:
+            <ol>
+                <li>Load this web app in a browser</li>
+                <li>Log in</li>
+                <li>Enter a valid name under 'Group name' and click the 'Create Group' button</li>
+                <li>Check to see the new group is created and added under "Group list"</li>
+                <li>Enter a string under "Keyword" and click the "Search" button</li>
+                <li>Choose a person under "Persons found" and click the "Add Person" button</li>
+                <li>Check to see the person is added under "Person list"</li>
+            </ol>
+        </div>
+    </div>
+    <div id="signedin-div">
+        <div class="signinframe">
+            <h3>Create New Group</h3>
+            <div class="select-div">
+                <span class="tag">Group name:</span>
+                <div id="groupName" contenteditable="true" class="sdk-input"></div>
+            </div>
+            <div>
+                <span class="tag">&nbsp;</span>
+                <button type="button" id="createGroupByName">Create Group</button>
+            </div>
+        </div>
+        <div class="signinframe">
+            <h3>Edit Group</h3>
+            <div class="list-div">
+                <span class="tag">Group list:</span>
+                <select id="groupList" size="5">
+                    <option></option>
+                </select>
+            </div>
+            <h4>Remove Group</h4>
+            <div id="removeGroup-div">
+                <span class="tag">&nbsp;</span>
+                <button type="button" id="removeGroup">Remove Group</button>
+            </div>
+            <h4>Rename Group</h4>
+            <div>
+                <span class="tag">New name:</span>
+                <div id="newGroupName" contenteditable="true" class="sdk-input"></div>
+            </div>
+            <div>
+                <span class="tag">&nbsp;</span>
+                <button type="button" id="renameGroup">Rename Group</button>
+            </div>
+            <h4>Remove Person from Group</h4>
+            <div class="list-div">
+                <span id='groupTag' class="tag">Person list:</span>
+                <select id="personList" size="5"></select>
+            </div>
+            <div>
+                <span class="tag">&nbsp;</span>
+                <button type="button" id="removePerson">Remove Person</button>
+                <button type="button" id="removeFromAll">Remove from all Groups</button>
+            </div>
+            <h4>Add Person to Group</h4>
+            <div class="select-div">
+                <span class="tag">Keyword:</span>
+                <div id="searchKey" contenteditable="true" class="sdk-input"></div>
+            </div>
+            <div>
+                <span class="tag">&nbsp;</span>
+                <button type="button" id="doSearch">Search</button>
+            </div>
+        </div>
+        <div>
+            <div id="search-persons-div" class="list-div">
+                <span class="tag">Persons found:</span>
+                <select id="personsFoundList" size="5"></select>
+            </div>
+            <div id="addPerson-div">
+                <span class="tag">&nbsp;</span>
+                <button type="button" id="addPerson">Add Person</button>
+            </div>
+        </div>
+        <div>
+            <div id="search-groups-div" class="list-div">
+                <span class="tag">Groups found:</span>
+                <select id="groupsFoundList" size="5"></select>
+            </div>
+            <div id="addDG-div">
+                <span class="tag">&nbsp;</span>
+                <button type="button" id="addDG">Add DG</button>
+            </div>
+        </div>
+    </div>
+</div>

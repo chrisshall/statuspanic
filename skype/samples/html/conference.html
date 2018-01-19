@@ -1,0 +1,47 @@
+<div class="conference">
+    <div class="noMe">Ability to receive chat, audio, and video invitations is not available in the current release.</div>
+    <h2>Conference</h2>
+    <div>
+        <h3> Join existing meeting</h3>
+        <div id="meetingUri" contenteditable="true" class="sdk-input">sip:someone@example.com;gruu;opaque=app:conf:focus:id:1WRB13D2</div>
+        <div id="startChatMeeting" class="button">Start chat in meeting</div>
+        <div id="startAudioMeeting" class="button">Start audio in meeting</div>
+        <div id="startVideoMeeting" class="button">Start video in meeting</div>
+
+    </div>
+    <div>
+        <h3>Meet now</h3>
+        <div id="startNewChatMeeting" class="button">Start a new chat meeting</div>
+        <div id="startNewAudioMeeting" class="button">Start a new audio meeting</div>
+        <div id="startNewVideoMeeting" class="button">Start a new video meeting</div>
+        <input id="newMeetingUri" class="sdk-input" placeholder="Meeting URI" />
+        <div class="c-add-p-container hide">
+            <span id="btn-add-contact" class="iconfont contactAdd"></span>
+            <div class="add-p-container hide">
+                <input type="text" id="txt-contact" placeholder="sip:someone@example.com" />
+                <div id="btn-add-participant" class="iconfont addp-ok"></div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h3>Manage Video</h3>
+        <div id="showRemoteVideoInMeeting" class="button">Show remote video in meeting</div>
+        <div id="removeRemoteVideoInMeeting" class="button">Remove remote video in meeting</div>
+    </div>
+    <div class="conversation">
+        <div class="header">
+            <h3>Conference Video</h3>
+        </div>
+        <div class="av-container">
+            <div id="renderWindow" class="render-window"></div>
+        </div>
+    </div>
+    <div class="conversation">
+        <div class="header">
+            <h3>Self Camera</h3>
+        </div>
+        <div id="av-self" class="av-container">
+            <div id="previewWindow" class="render-window"></div>
+        </div>
+    </div>
+</div>

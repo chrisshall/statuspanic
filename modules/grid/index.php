@@ -9,7 +9,8 @@
   array('EXCITING',     'Blurb', 'Blarb', 'L@statuspanic, G@statuspanic, I@statuspanic')
 );*/
 
-$str = file_get_contents('./SCERJSON.json');
+$str = file_get_contents('./SCER.json');
+$str = utf8_encode($str);
 $data = json_decode($str, true);
 
 

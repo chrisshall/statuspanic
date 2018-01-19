@@ -5,14 +5,14 @@
      {
       "name": "stocks",
       "class": "mini middle",
-      "width": 250,
+      "width": 200,
       "height": 300,
       "update": 300
     },
     {
       "name": "weather",
       "class": "mini",
-      "width": 800,
+      "width": 850,
       "height": 300,
       "update": 300, 
       "args": {
@@ -22,7 +22,7 @@
 	    {
       "name": "space",
       "width": 1100,
-	  "height": 10,
+	  "height": 20,
       "update": 0
     },      
 	{
@@ -51,19 +51,12 @@
 	  },
 	{
       "name": "travel",
-      "width": 425,
-	  "height": 175,
+      "width": 625,
+	  "height": 225,
       "update": 150,
       "class": "mini bluegradient middle"
-    },
+    },    
 	{
-      "name": "travel_back",
-      "width": 425,
-	  "height": 175,
-      "update": 150,
-      "class": "mini bluegradient middle"
-    },
-    {
       "name": "marta_north",
       "width": 200,
       "update": 5,
@@ -74,6 +67,19 @@
       "width": 200,
       "update": 5,
       "class": "mini bluegradient middle"
+    },
+	{
+      "name": "travel_back",
+      "width": 625,
+	  "height": 225,
+      "update": 150,
+      "class": "mini bluegradient middle"
+    },
+	{
+      "name": "space",
+      "width": 1100,
+	  "height": 200,
+      "update": 0
     },
 	{
 	  "name": "calendar",
@@ -96,6 +102,12 @@
         "height": 300,
 		"width": 100
       }
+    },
+			    {
+      "name": "space",
+      "width": 1100,
+	  "height": 50,
+      "update": 0
     },
     {
       "name": "grid",

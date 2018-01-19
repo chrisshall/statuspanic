@@ -8,11 +8,13 @@ class Bar {
     }
 }
 // Get SCER JSON file 
-$str = file_get_contents('./SCERJSON.json');
-$data = json_decode($str, true);
+$str = file_get_contents('SCER.json');
+$str = utf8_encode($str);
+$data = json_decode($str, TRUE);
 
-$string = file_get_contents('./SCER.json');
+$string = file_get_contents('SCER.json');
 $datum = json_decode($str, true);
+print_r($dataum);
 $string = utf8_encode($string);
 $scer_array = json_decode($string ,true);
 

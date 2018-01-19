@@ -1,0 +1,35 @@
+<div class="anonymous-join">
+    <h2>Anonymous Join</h2>
+    <div class="signinframe">
+        <div>Anonymous Participant's Name:</div>
+        <div id="name" contenteditable="true" class="sdk-input">Anonymous user</div>
+        <div>Conference URI:</div>
+        <!-- meeting URI below is an example only. Please update it to an exisiting conference. -->
+        <div id="meetingUri" contenteditable="true" class="sdk-input">sip:someone@example.com;gruu;opaque=app:conf:focus:id:1WRB13D2</div>
+        <div id="signin" class="button">Sign-in</div>
+        <br />
+        <div id="startChatMeeting" class="button">Start chat</div>
+        <div id="startAudioMeeting" class="button">Start audio</div>
+        <div id="startVideoMeeting" class="button">Start video</div>
+        <br />
+        <div id="end" class="button">Leave Conference</div>
+        <br />
+    </div>
+    <!--<table><tr><td id="renderWindow" style="background:blue;width:400px;height:300px"></td></tr></table>-->
+    <div class="conversation">
+        <div class="header">
+            <h3>Conference Video</h3>
+        </div>
+        <div id="renderTable" class="av-container">
+            <div id="renderWindow" class="render-window"></div>
+        </div>
+    </div>
+    <div class="conversation">
+        <div class="header">
+            <h3>Self Camera</h3>
+        </div>
+        <div id="previewTable" class="av-container">
+            <div id="previewWindow" class="render-window"></div>
+        </div>
+    </div>
+</div>

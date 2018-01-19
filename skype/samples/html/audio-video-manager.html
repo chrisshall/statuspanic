@@ -1,0 +1,48 @@
+<div class="audio-video-manager">
+    <div class="noMe">Ability to receive chat, audio, and video invitations is not available in the current release.</div>
+    <h2>Audio/Video</h2>
+    <div class="conversation">
+        <div id="search-user" class="header">
+            <h3>Search for User</h3>
+            <div id="av-to" class="editable" contenteditable="true" placeholder="someone@example.com" />
+            <div>
+                <span id="btn-search" class="iconfont search"></span>
+            </div>
+        </div>
+        <div id="found-user" class="header" style="display: none;">
+            <h3>Found User</h3>
+            <div class="c-name"></div>
+            <div class="location"></div>
+            <h4>Add Modalities:</h4>
+            <div>
+                <a id="btn-video" class="iconfont videoOn" title="Video"></a>
+                <a id="btn-audio" class="iconfont callStart" title="Audio"></a>
+            </div>
+            <h4>Add Participant:</h4>
+            <div id="av-add-p" class="editable" contenteditable="true" placeholder="someone@example.com" />
+            <a id="btn-add-participant" class="iconfont contactAdd" title="Hang up"></a>
+            <div id="conversationView">
+                <div id="av-participant" class="av-container">
+                    <div class="c-name"></div>
+                    <div class="call-status"></div>
+                    <div class="render-window" id="render-p-window"></div>
+                    <div class="ctr-buttons">
+                        <a id="btn-hide-video" class="iconfont videoOn" title="Hide Video"></a>
+                        <a id="btn-show-video" class="iconfont videoOff title="Show Video" style="display: none;"></a>
+                        <a id="btn-mute" class="iconfont mic-on" title="Mute"></a>
+                        <a id="btn-unmute" class="iconfont mic-off" title="Unmute" style="display: none;"></a>
+                        <a id="hang-up" class="iconfont hang-up" title="Hang up"></a>
+                    </div>
+                </div>
+            </div>
+            <div id="selfCam" class="conversation">
+                <div class="header">
+                    <h3>Self Camera</h3>
+                </div>
+                <div id="av-self" class="av-container">
+                    <div class="render-window" id="render-self-window"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
