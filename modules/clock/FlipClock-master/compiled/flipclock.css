@@ -17,54 +17,69 @@
   cursor: pointer;
   text-decoration: none;
   color: #ccc; }
+  
+
 
 .flip-clock-wrapper a:hover {
   color: #fff; }
+  
+
 
 .flip-clock-wrapper ul {
   list-style: none; }
 
+
+  
 .flip-clock-wrapper.clearfix:before,
 .flip-clock-wrapper.clearfix:after {
   content: " ";
   display: table; }
+  
 
+  
 .flip-clock-wrapper.clearfix:after {
   clear: both; }
+  
+
 
 .flip-clock-wrapper.clearfix {
   *zoom: 1; }
+  
+
 
 /* Main */
-.flip-clock-wrapper {
+.flip-clock-wrapper:not(.marta) {
   font: normal 15px "Helvetica Neue", Helvetica, sans-serif;
   -webkit-user-select: none; }
 
-.flip-clock-meridium {
+.flip-clock-meridium:not(.marta-meridium) {
   background: none !important;
   box-shadow: 0 0 0 !important;
   font-size: 50px !important; }
 
 .flip-clock-meridium a { color: #efefef }
 
-.flip-clock-wrapper {
+.flip-clock-wrapper:not(.marta) {
   text-align: center;
   position: relative;
   width: 100%;
   margin: 1em;
 }
 
+
 .flip-clock-wrapper:before,
 .flip-clock-wrapper:after {
     content: " "; /* 1 */
     display: table; /* 2 */
 }
+
 .flip-clock-wrapper:after {
     clear: both;
 }
 
+
 /* Skeleton */
-.flip-clock-wrapper ul {
+.flip-clock-wrapper:not(.marta) ul {
   position: relative;
   /*float: left;*/
   display: inline-block;
@@ -78,7 +93,8 @@
   background: #000;
 }
 
-.flip-clock-wrapper ul li {
+
+.flip-clock-wrapper:not(.marta) ul li {
   z-index: 1;
   position: absolute;
   left: 0;
@@ -89,10 +105,12 @@
   text-decoration: none !important;
 }
 
-.flip-clock-wrapper ul li:first-child {
+
+
+.flip-clock-wrapper:not(.marta) ul li:first-child {
   z-index: 2; }
 
-.flip-clock-wrapper ul li a {
+.flip-clock-wrapper:not(.marta) ul li a {
   display: block;
   height: 100%;
   -webkit-perspective: 200px;
@@ -103,7 +121,8 @@
   overflow:hidden;
   cursor: default !important; }
 
-.flip-clock-wrapper ul li a div {
+
+.flip-clock-wrapper:not(.marta) ul li a div {
   z-index: 1;
   position: absolute;
   left: 0;
@@ -112,14 +131,15 @@
   font-size: 100px;
   overflow: hidden; 
   outline: 1px solid transparent; }
+  
 
-.flip-clock-wrapper ul li a div .shadow {
+.flip-clock-wrapper:not(.marta) ul li a div .shadow {
   position: absolute;
   width: 100%;
   height: 100%;
   z-index: 2; }
 
-.flip-clock-wrapper ul li a div.up {
+.flip-clock-wrapper:not(.marta) ul li a div.up {
   -webkit-transform-origin: 50% 100%;
   -moz-transform-origin: 50% 100%;
   -ms-transform-origin: 50% 100%;
@@ -127,7 +147,7 @@
   transform-origin: 50% 100%;
   top: 0; }
 
-.flip-clock-wrapper ul li a div.up:after {
+.flip-clock-wrapper:not(.marta) ul li a div.up:after {
   content: "";
   position: absolute;
   top: 84px;
@@ -138,7 +158,7 @@
   background-color: #000;
   background-color: rgba(0, 0, 0, 0.4); }
 
-.flip-clock-wrapper ul li a div.down {
+.flip-clock-wrapper:not(.marta) ul li a div.down {
   -webkit-transform-origin: 50% 0;
   -moz-transform-origin: 50% 0;
   -ms-transform-origin: 50% 0;
@@ -149,7 +169,7 @@
   border-bottom-right-radius: 6px;
 }
 
-.flip-clock-wrapper ul li a div div.inn {
+.flip-clock-wrapper:not(.marta) ul li a div div.inn {
   position: absolute;
   left: 0;
   z-index: 1;
@@ -162,17 +182,17 @@
   border-radius: 6px;
   /* font-size: 90px; } */}
 
-.flip-clock-wrapper ul li a div.up div.inn {
+.flip-clock-wrapper:not(.marta) ul li a div.up div.inn {
   top: 0; }
 
-.flip-clock-wrapper ul li a div.down div.inn {
+.flip-clock-wrapper:not(.marta) ul li a div.down div.inn {
   bottom: 0; }
 
 /* PLAY */
-.flip-clock-wrapper ul.play li.flip-clock-before {
+.flip-clock-wrapper:not(.marta) ul.play:not(.marta-play) li.flip-clock-before:not(.marta-before) {
   z-index: 3; }
 
-.flip-clock-wrapper .flip {   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7); }
+.flip-clock-wrapper:not(.marta) .flip:not(.marta-flip) {   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7); }
 
 .flip-clock-wrapper ul.play li.flip-clock-active {
   -webkit-animation: asd 0.5s 0.5s linear both;
@@ -180,18 +200,20 @@
   animation: asd 0.5s 0.5s linear both;
   z-index: 5; }
 
-.flip-clock-divider {
+.flip-clock-divider:not(.marta-divider) {
   /*float: left;*/
   display: inline-block;
   position: relative;
   width: 20px;
-  height: 150px;
+  /* height: 50px; */
   margin: 10px;}
+  
+
 
 .flip-clock-divider:first-child {
   width: 0; }
 
-.flip-clock-dot {
+.flip-clock-dot:not(.marta-dot) {
   display: block;
   background: #323434;
   width: 10px;
@@ -199,22 +221,24 @@
   position: absolute;
   border-radius: 50%;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  left: 5px; }
-
-.flip-clock-divider .flip-clock-label {
+  left: 5px; 
+  margin-top: -1em;
+}
+.flip-clock-divider:not(.marta-divider) .flip-clock-label:not(.marta-label) {
   position: absolute;
   top: -1.5em;
   right: -86px;
+  font-size: 0px;
   color: black;
   text-shadow: none; }
 
-.flip-clock-divider.minutes .flip-clock-label {
+.flip-clock-divider.minutes:not(.marta-divider.minutes) .flip-clock-label:not(.marta-label) {
   right: -88px; }
 
-.flip-clock-divider.seconds .flip-clock-label {
+.flip-clock-divider.seconds:not(.marta-divider.minutes) .flip-clock-label:not(.marta-label) {
   right: -91px; }
 
-.flip-clock-dot.top {
+.flip-clock-dot.top:not(.marta-dot.top) {
   top: 20px; }
 
 .flip-clock-dot.bottom {
@@ -377,6 +401,457 @@
   -moz-animation: hide 0.5s 0.3s linear both;
   animation: hide 0.5s 0.2s linear both; }
 
+@-webkit-keyframes show {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@-moz-keyframes show {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@-o-keyframes show {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@keyframes show {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes hide {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+@-moz-keyframes hide {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+@-o-keyframes hide {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+@keyframes hide {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+/* Adding Marta specific */
+/****************************************************************************************************************************
+
+/****************************************************************************************************************************
+
+/****************************************************************************************************************************
+
+/****************************************************************************************************************************
+
+/****************************************************************************************************************************
+/****************************************************************************************************************************
+
+
+/****************************************************************************************************************************/
+
+/* Get the bourbon mixin from http://bourbon.io */
+/* Reset */
+.marta * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.marta a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #ccc; }
+
+.marta a:hover {
+  color: #fff; }
+
+.marta ul {
+  list-style: none; }
+
+.marta.clearfix:before,
+.marta.clearfix:after {
+  content: " ";
+  display: table; }
+
+.marta.clearfix:after {
+  clear: both; }
+
+.marta.clearfix {
+  *zoom: 1; }
+
+/* Main */
+.marta {
+  font: normal 15px "Helvetica Neue", Helvetica, sans-serif;
+  -webkit-user-select: none; }
+
+.marta-meridium {
+  background: none !important;
+  box-shadow: 0 0 0 !important;
+  font-size: 20px !important; }
+
+.marta-meridium a { color: #efefef }
+
+.marta {
+  text-align: center;
+  position: relative;
+  width: 100%;
+  margin: 1em;
+}
+
+.marta:before,
+.marta:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+.marta:after {
+    clear: both;
+}
+
+/* Skeleton */
+.marta ul {
+  position: relative;
+  /*float: left;*/
+  display: inline-block;
+  margin: 5px;
+  width: 35px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 40px;
+  border-radius: 6px;
+  background: #000;
+}
+
+.marta ul li {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  line-height: 40px;
+  text-decoration: none !important;
+}
+
+.marta ul li:first-child {
+  z-index: 2; }
+
+.marta ul li a {
+  display: block;
+  height: 100%;
+  -webkit-perspective: 200px;
+  -moz-perspective: 200px;
+  perspective: 200px;
+  margin: 0 !important;
+  /* overflow: visible !important; */
+  overflow:hidden;
+  cursor: default !important; }
+
+.marta ul li a div {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  font-size: 20px;
+  overflow: hidden; 
+  outline: 1px solid transparent; }
+
+.marta ul li a div .shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2; }
+
+.marta ul li a div.up {
+  -webkit-transform-origin: 50% 100%;
+  -moz-transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+  -o-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  top: 0; }
+
+.marta ul li a div.up:after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.4); }
+
+.marta ul li a div.down {
+  -webkit-transform-origin: 50% 0;
+  -moz-transform-origin: 50% 0;
+  -ms-transform-origin: 50% 0;
+  -o-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  bottom: 0;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.marta ul li a div div.inn {
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 200%;
+  color: #ccc;
+  text-shadow: 0 1px 2px #000;
+  text-align: center;
+  background-color: #333;
+  border-radius: 6px;
+  /* font-size: 90px; } */}
+
+.marta ul li a div.up div.inn {
+  top: 0; }
+
+.marta ul li a div.down div.inn {
+  bottom: 0; }
+
+/* PLAY */
+.marta ul.marta-play li.marta-before {
+  z-index: 3; }
+
+.marta .marta-flip {   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7); }
+
+.marta ul.marta-play li.marta-active {
+  -webkit-animation: asd 0.5s 0.5s linear both;
+  -moz-animation: asd 0.5s 0.5s linear both;
+  animation: asd 0.5s 0.5s linear both;
+  z-index: 5; }
+
+.marta-divider {
+  /*float: left;*/
+  display: inline-block; 
+  position: relative;
+  width: 20px;
+  height: 30px;
+  margin: 10px;}
+
+.marta-divider:first-child {
+  width: 0; }
+
+.marta-dot {
+  display: block;
+  background: #323434;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  left: 3px; }
+
+.marta-divider .marta-label {
+  position: absolute;
+  top: -1.5em;
+  right: -86px;
+  color: black;
+  text-shadow: none; }
+
+.marta-divider.minutes .marta-label {
+  right: -88px; }
+
+.marta-divider.seconds .marta-label {
+  right: -91px; }
+
+.marta-dot.top {
+  top: 20px; }
+
+.marta-dot.bottom {
+  bottom: 30px; }
+
+@-webkit-keyframes asd {
+  0% {
+    z-index: 2; }
+
+  20% {
+    z-index: 4; }
+
+  100% {
+    z-index: 4; } }
+
+@-moz-keyframes asd {
+  0% {
+    z-index: 2; }
+
+  20% {
+    z-index: 4; }
+
+  100% {
+    z-index: 4; } }
+
+@-o-keyframes asd {
+  0% {
+    z-index: 2; }
+
+  20% {
+    z-index: 4; }
+
+  100% {
+    z-index: 4; } }
+
+@keyframes asd {
+  0% {
+    z-index: 2; }
+
+  20% {
+    z-index: 4; }
+
+  100% {
+    z-index: 4; } }
+
+.marta ul.marta-play li.marta-active .down {
+  z-index: 2;
+  -webkit-animation: turn 0.5s 0.5s linear both;
+  -moz-animation: turn 0.5s 0.5s linear both;
+  animation: turn 0.5s 0.5s linear both; }
+
+@-webkit-keyframes turn {
+  0% {
+    -webkit-transform: rotateX(90deg); }
+
+  100% {
+    -webkit-transform: rotateX(0deg); } }
+
+@-moz-keyframes turn {
+  0% {
+    -moz-transform: rotateX(90deg); }
+
+  100% {
+    -moz-transform: rotateX(0deg); } }
+
+@-o-keyframes turn {
+  0% {
+    -o-transform: rotateX(90deg); }
+
+  100% {
+    -o-transform: rotateX(0deg); } }
+
+@keyframes turn {
+  0% {
+    transform: rotateX(90deg); }
+
+  100% {
+    transform: rotateX(0deg); } }
+
+.marta ul.marta-play li.marta-before .up {
+  z-index: 2;
+  -webkit-animation: turn2 0.5s linear both;
+  -moz-animation: turn2 0.5s linear both;
+  animation: turn2 0.5s linear both; }
+
+  @-webkit-keyframes turn2 {
+  0% {
+    -webkit-transform: rotateX(0deg); }
+
+  100% {
+    -webkit-transform: rotateX(-90deg); } }
+
+@-moz-keyframes turn2 {
+  0% {
+    -moz-transform: rotateX(0deg); }
+
+  100% {
+    -moz-transform: rotateX(-90deg); } }
+
+@-o-keyframes turn2 {
+  0% {
+    -o-transform: rotateX(0deg); }
+
+  100% {
+    -o-transform: rotateX(-90deg); } }
+
+@keyframes turn2 {
+  0% {
+    transform: rotateX(0deg); }
+
+  100% {
+    transform: rotateX(-90deg); } }
+
+
+.marta ul li.marta-active {
+  z-index: 3; }
+
+/* SHADOW */
+.marta ul.marta-play li.marta-before .up .shadow {
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.1)), color-stop(100%, black));
+  background: linear, top, rgba(0, 0, 0, 0.1) 0%, black 100%;
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
+  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
+  background: linear, to bottom, rgba(0, 0, 0, 0.1) 0%, black 100%;
+  -webkit-animation: show 0.5s linear both;
+  -moz-animation: show 0.5s linear both;
+  animation: show 0.5s linear both; }
+
+.marta ul.marta-play li.marta-active .up .shadow {
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.1)), color-stop(100%, black));
+  background: linear, top, rgba(0, 0, 0, 0.1) 0%, black 100%;
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
+  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
+  background: linear, to bottom, rgba(0, 0, 0, 0.1) 0%, black 100%;
+  -webkit-animation: hide 0.5s 0.3s linear both;
+  -moz-animation: hide 0.5s 0.3s linear both;
+  animation: hide 0.5s 0.3s linear both; }
+
+/*DOWN*/
+.marta ul.marta-play li.marta-before .down .shadow {
+  background: -moz-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, black), color-stop(100%, rgba(0, 0, 0, 0.1)));
+  background: linear, top, black 0%, rgba(0, 0, 0, 0.1) 100%;
+  background: -o-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
+  background: -ms-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
+  background: linear, to bottom, black 0%, rgba(0, 0, 0, 0.1) 100%;
+  -webkit-animation: show 0.5s linear both;
+  -moz-animation: show 0.5s linear both;
+  animation: show 0.5s linear both; }
+
+.marta ul.marta-play li.marta-active .down .shadow {
+  background: -moz-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, black), color-stop(100%, rgba(0, 0, 0, 0.1)));
+  background: linear, top, black 0%, rgba(0, 0, 0, 0.1) 100%;
+  background: -o-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
+  background: -ms-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
+  background: linear, to bottom, black 0%, rgba(0, 0, 0, 0.1) 100%;
+  -webkit-animation: hide 0.5s 0.3s linear both;
+  -moz-animation: hide 0.5s 0.3s linear both;
+  animation: hide 0.5s 0.2s linear both; }
+  
 @-webkit-keyframes show {
   0% {
     opacity: 0; }

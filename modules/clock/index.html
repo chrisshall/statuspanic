@@ -2,21 +2,90 @@
 	<head>
 		<link rel="stylesheet" href="modules/clock/FlipClock-master/compiled/flipclock.css">
 
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 		<script src="modules/clock/FlipClock-master/compiled/flipclock.js"></script>		
 	</head>
 	<body>
-		<div class="clock" style="margin:3em;"></div>
+		<div id="clock1" class="flip-clock-wrapper" style="margin:3em;
+		"></div>
+		<!--<div class="countdownclock" style="margin:2em;"></div>-->
 
 		<script type="text/javascript">
 			var clock;
-			
+			var countdownclock;
+			var clocks = [];
 			$(document).ready(function() {
-				clock = $('.clock').FlipClock({
-					clockFace: 'TwelveHourClock'
+					clock = new $('.flip-clock-wrapper').FlipClock({
+					clockFace: 'TwelveHourClock'			
 				});
+				clocks.push(clock);
+					countdownclock = new $('.countdownclock').FlipClock(30,{
+					clockFace: 'MinuteCounter',
+					autostart: true,
+					countdown: true,
+					
+					});
+					var root = document.getElementById("clock1");
+				traverse(root);
+				console.log(root);
+				
+
+				function traverse(currentEl){
+					clearFlip(currentEl);
+					if (currentEl.children){
+						var children = currentEl.children;
+						for (var i =0; i< children.length; i++){
+							traverse(children[i]);
+						}
+					}
+					else if(currentEl.nextElementSibling){
+						clearFlip(currentEl.nextElementSibling);
+						traverse(currentEl.nextElementSibling);
+					}
+				}
+				
+				function clearFlip(childEl){
+						if (childEl.classList.contains("marta-flip")){
+							childEl.classList.remove("marta-flip");
+							childEl.classList.add("flip");
+							}
+						if (childEl.classList.contains("marta-play")){
+							childEl.classList.remove("marta-play");
+							childEl.classList.add("play");
+							}
+						if (childEl.classList.contains("marta-dot")){
+							childEl.classList.remove("marta-dot");
+							childEl.classList.add("flip-clock-dot");
+							}
+						if (childEl.classList.contains("marta-before")){
+							childEl.classList.remove("marta-before");
+							childEl.classList.add("flip-clock-before");
+							}
+						if (childEl.classList.contains("marta-active")){
+							childEl.classList.remove("marta-active");
+							childEl.classList.add("flip-clock-active");
+							}
+						if (childEl.classList.contains("marta-meridium")){
+							childEl.classList.remove("marta-meridium");
+							childEl.classList.add("flip-clock-meridium");
+							}
+						if (childEl.classList.contains("marta-label")){
+							childEl.classList.remove("marta-label");
+							childEl.classList.add("flip-clock-label");
+							}
+						if (childEl.classList.contains("marta-divider")){
+							childEl.classList.remove("marta-divider");
+							childEl.classList.add("flip-clock-divider");
+							}/*
+						if (childEl.classList.contains("marta")){
+							childEl.classList.remove("marta");
+							childEl.classList.add("flip-clock-wrapper");
+							}*/
+				}
 			});
+					
+
 		</script>
 		
 	</body>

@@ -48,10 +48,12 @@ $items = array(
 	 'b|' . $buford_color => $traffic_time_buford_text . ' from Mall of GA',
 	 'a|' . $athens_color => $traffic_time_athens_text . ' from Athens'
 	 );
-	 
-	 echo 'Travel Time to NCR HQ';
+
 ?>
 
+<div class="travel" style="height:45px;display:inline-block; overflow-y:hidden;">
+	<span class="travel">Home</span> <span style="margin-left:0.5em; margin-right:0.5em;" class="background">I</span> <span class="travel"> NCR </span>
+</div>
 <ul>
     <?php foreach($items as $bubble => $line) { 
         $bubble = explode('|', $bubble);
@@ -61,9 +63,9 @@ $items = array(
         <li>
             <span class='<?php echo $color ?> travel'>
                 <span class='background'>E</span>
-                <span class='display'><?php echo $bubble ?></span>
+                <!--<span class='display'><?php echo $bubble ?></span>-->
             </span>
-            <span class='travel'><?php echo $line ?></span>
+            <span style="margin-left:1em" class='travel'><?php echo $line ?></span>
         </li>
     <?php } ?>
 

@@ -393,6 +393,7 @@ var FlipClock;
 		createDivider: function(label, css, excludeDots) {
 			if(typeof css == "boolean" || !css) {
 				excludeDots = css;
+				//cludeDots = true;
 				css = label;
 			}
 
@@ -1522,7 +1523,7 @@ var FlipClock;
 				date = this.getDateObject();
 			}
 
-			console.log(date);
+			//console.log(date);
 
 			
 			var hours = date.getHours();

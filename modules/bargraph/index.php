@@ -173,12 +173,12 @@ $final_padding2 = max($default_padding, ($max_width2 - (($bar_width2 + $total_ou
 		<div class='bar' style='margin-top: <?php echo ($top_offset2) . 'px; width: ' .
 								$bar_width2 . 'px; padding: 0 ' . $final_padding2 . 'px;' ?>'>
 			<div class='header'><?php echo '<span class="total">'. $bar2->height .'</span> / <span class="remaining">'. $bar2->remaining .'</span>'; ?></div>
-			<div class='view' id='bar_<?php echo $count ?>' style='height: <?php echo $bar_height; ?>px;'></div>
+			<div class='view' id='bar2_<?php echo $count2 ?>' style='height: <?php echo $bar_height2; ?>px;'></div>
 		</div>
 	<?php } ?>
 	  </div>
 	<?php for($j = 0; $j < count($bars2); $j++) {
-		$bar = $bars2[$j]; 
+		$bar2 = $bars2[$j]; 
 	?>  
 		<div class='bar-title' style='width: <?php echo $bar_width2 . 'px; padding: 0 ' . $final_padding2 . 'px;' ?>'>
 			<span class='title'><?php echo $bar2->name ?></span>

@@ -47,7 +47,8 @@ function convert_time($time){
 	$time = $time*24;
 	$min = floor($time*60);
 	$sec = floor((($time*60) - $min)*60);
-	return $min . 'm ' . $sec . 's';
+	//return $min . 'm ' . $sec . 's';
+	return ($min*60 + $sec);
 }
 
 //Get the time before next stop
@@ -59,26 +60,69 @@ $next109N = convert_time(get_next_stop($route109N,$currentTime));
 
 $northbound = array(
     // 'bubble' => 'line'
-    '12|blue'  => $next12N,
-    '27|blue'  => $next27N,
-    '36|blue'  => $next36E,
-    '109|blue' => $next109N
+    '12N|blue'  => $next12N,
+    '27N|blue'  => $next27N,
+    '36E|blue'  => $next36E,
+    '109N|blue' => $next109N
 	);
 echo "Northbound Buses";
 ?>
 
-<ul>
+<html>
+	<head>
+		<link rel="stylesheet" href="modules/marta_north/FlipClock-master/compiled/Marta.css">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+		<script src="modules/marta_north/FlipClock-master/compiled/Marta.js"></script>		
+	</head>
+	<body>
+		<!--<div class="clock2" data-countdown="<?php echo $next12N ?>" style="margin:1em;"></div>
+		<div class="clock3" data-countdown="<?php echo $next27N ?>" style="margin:1em"></div>
+		<div class="clock3" data-countdown="<?php echo $next36E ?>" style="margin:1em;"></div>
+		<div class="clock3" data-countdown="<?php echo $next109N ?>" style="margin:1em"></div>-->		
+	</body>
+
+
+<ul id="list2">
     <?php foreach($northbound as $bubble => $line) { 
         $bubble = explode('|', $bubble);
         $color  = $bubble[1];
         $bubble = $bubble[0];
         ?>
-        <li>
+        <li style="width:500px;">
             <span class='<?php echo $color ?> marta_north'>
                 <span class='background'>E</span>
                 <span class='display'><?php echo $bubble ?></span>
             </span>
-            <span class='content'><?php echo $line ?></span>
+			<span id="north" class="marta" data-countdown="<?php echo $line ?>"</span>
         </li>
     <?php } ?>
 </ul>
+</html>
+		<script type="text/javascript">
+			
+			
+			$(document).ready(function() {
+				var clocks3 = [];
+				
+				$('.marta').each(function(){
+					var clock3 = $(this);
+					var data = clock3.data('countdown');
+				clock3.FlipClock(data,{
+					clockFace: 'MinuteCounter',
+					countdown: true,
+					autoStart: true,
+					callbacks:{
+						stop: function(){
+							window.location.reload();
+						}
+					}
+				});
+				clocks3.push(clock3);
+				});
+
+			// 
+			});
+			
+		</script>

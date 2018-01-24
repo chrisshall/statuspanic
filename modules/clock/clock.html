@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="modules/clock/FlipClock-master/compiled/flipclock.css">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+		<script src="modules/clock/FlipClock-master/compiled/flipclock.js"></script>		
+	</head>
+	<body>
+		<div id="clock1" class="flip-clock-wrapper" style="margin:3em;
+		"></div>
+		<!--<div class="countdownclock" style="margin:2em;"></div>-->
+
+		<script type="text/javascript">
+			var clock;
+			var countdownclock;
+			var clocks = [];
+			$(document).ready(function() {
+					clock = new $('.flip-clock-wrapper').FlipClock({
+					clockFace: 'TwelveHourClock'			
+				});
+				clocks.push(clock);
+					countdownclock = new $('.countdownclock').FlipClock(30,{
+					clockFace: 'MinuteCounter',
+					autostart: true,
+					countdown: true,
+					
+					});
+			});
+					
+
+		</script>
+		
+	</body>
+</html>

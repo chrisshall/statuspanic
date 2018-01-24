@@ -13,7 +13,7 @@
       "name": "weather",
       "class": "mini",
       "width": 850,
-      "height": 300,
+      "height": 250,
       "update": 300, 
       "args": {
         "zipcode": "30096"
@@ -22,7 +22,7 @@
 	    {
       "name": "space",
       "width": 1100,
-	  "height": 20,
+	  "height": 0,
       "update": 0
     },      
 	{
@@ -39,7 +39,7 @@
 			    {
       "name": "space",
       "width": 1100,
-	  "height": 275,
+	  "height": 225,
       "update": 0
     },
 	{
@@ -51,30 +51,33 @@
 	  },
 	{
       "name": "travel",
-      "width": 625,
+      "width": 500,
+	  "height": 225,
+      "update": 150,
+      "class": "mini bluegradient middle"
+    },	
+	{
+      "name": "travel_back",
+      "width": 500,
 	  "height": 225,
       "update": 150,
       "class": "mini bluegradient middle"
     },    
 	{
       "name": "marta_north",
-      "width": 200,
-      "update": 5,
+      "width": 500,
+	  "height": 325,
+      "update": 0,
       "class": "mini bluegradient middle"
     },
 	{
       "name": "marta_south",
-      "width": 200,
-      "update": 5,
+      "width": 500,
+	  "height": 325,
+      "update": 0,
       "class": "mini bluegradient middle"
     },
-	{
-      "name": "travel_back",
-      "width": 625,
-	  "height": 225,
-      "update": 150,
-      "class": "mini bluegradient middle"
-    },
+
 	{
       "name": "space",
       "width": 1100,
