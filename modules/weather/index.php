@@ -56,9 +56,9 @@ function displayIcon($array){
 		</div>
 		<div style="margin-left:2px;font-size: 20px"><?php echo $data_current['display_location']['zip'] ?> / <?php echo $data_current['display_location']['city'] ?></div>
 	</div>
-<span style="margin-left:13em;margin-top:-12em; height:250px; width=:400px;display:inline-block">
+<div style="white-space:nowrap;margin-left:13em;margin-top:-12em; height:250px; width:625px;display:inline-block; overflow-x:scroll; overflow-y:hidden">
 
-		<div style="margin:10px;font-size:26px;display:inline-block;">
+		<div style="margin:10px;font-size:26px;display:inline-block; ">
 		<div>
 			<?php echo displayIcon($data_forecast['0']);
 			echo  $data_forecast['0']['high']['fahrenheit'] . '&deg; F' ?> / 
@@ -102,6 +102,50 @@ function displayIcon($array){
 		</div>
 		<div><?php echo $data_forecast['4']['conditions'] ?></div>
 	</div>
+	
+		<div style="margin:10px;font-size:26px;display:inline-block;">
+		<div>
+			<?php echo displayIcon($data_forecast['5']);
+			echo $data_forecast['5']['high']['fahrenheit'] . '&deg; F' ?> / 
+			<?php echo  $data_forecast['5']['low']['fahrenheit'] . '&deg; F '?>
+		</div>
+		<div><?php echo $data_forecast['5']['conditions'] ?></div>
+	</div>
+	
+		<div style="margin:10px;font-size:26px;display:inline-block;">
+		<div>
+			<?php echo displayIcon($data_forecast['6']);
+			echo $data_forecast['6']['high']['fahrenheit'] . '&deg; F' ?> / 
+			<?php echo  $data_forecast['6']['low']['fahrenheit'] . '&deg; F '?>
+		</div>
+		<div><?php echo $data_forecast['6']['conditions'] ?></div>
+	</div>
+	
+		<div style="margin:10px;font-size:26px;display:inline-block;">
+		<div>
+			<?php echo displayIcon($data_forecast['7']);
+			echo $data_forecast['7']['high']['fahrenheit'] . '&deg; F' ?> / 
+			<?php echo  $data_forecast['7']['low']['fahrenheit'] . '&deg; F '?>
+		</div>
+		<div><?php echo $data_forecast['7']['conditions'] ?></div>
+	</div>
 
+		<div style="margin:10px;font-size:26px;display:inline-block;">
+		<div>
+			<?php echo displayIcon($data_forecast['8']);
+			echo $data_forecast['8']['high']['fahrenheit'] . '&deg; F' ?> / 
+			<?php echo  $data_forecast['8']['low']['fahrenheit'] . '&deg; F '?>
+		</div>
+		<div><?php echo $data_forecast['8']['conditions'] ?></div>
+	</div>
+	
+		<div style="margin:10px;font-size:26px;display:inline-block;">
+		<div>
+			<?php echo displayIcon($data_forecast['9']);
+			echo $data_forecast['9']['high']['fahrenheit'] . '&deg; F' ?> / 
+			<?php echo  $data_forecast['9']['low']['fahrenheit'] . '&deg; F '?>
+		</div>
+		<div><?php echo $data_forecast['9']['conditions'] ?></div>
+	</div>
 </span>
 <html>
