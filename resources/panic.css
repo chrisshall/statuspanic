@@ -62,10 +62,8 @@ table {
 }
 
 .vertical-center {
-	/*top: 50%;*/
-	/*position: relative;*/
-	margin-top: 1em;
-	height: 1em;	
+margin-left: 6em;
+
 }
 
 .padding {

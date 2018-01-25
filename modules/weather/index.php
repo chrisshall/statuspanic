@@ -47,7 +47,7 @@ function displayIcon($array){
 
 ?>
 
-<html style="overflow-x: scroll">
+<html >
 	<div  style="margin-top:3.8em; margin-left:0.5em; float: left">
 		<div class='mega'>
 			<?php echo displayCurrentIcon($icon_url);
@@ -56,7 +56,7 @@ function displayIcon($array){
 		</div>
 		<div style="margin-left:2px;font-size: 20px"><?php echo $data_current['display_location']['zip'] ?> / <?php echo $data_current['display_location']['city'] ?></div>
 	</div>
-<span style="margin-left:12em; float: left; position:absolute;margin-top:20px; height:250px; width=:400px;display:block">
+<span style="margin-left:13em;margin-top:-12em; height:250px; width=:400px;display:inline-block">
 
 		<div style="margin:10px;font-size:26px;display:inline-block;">
 		<div>

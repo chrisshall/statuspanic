@@ -13,7 +13,7 @@
       "name": "weather",
       "class": "mini",
       "width": 850,
-      "height": 250,
+      "height": 300,
       "update": 300, 
       "args": {
         "zipcode": "30096"
@@ -51,18 +51,12 @@
 	  },
 	{
       "name": "travel",
-      "width": 500,
+      "width": 800,
 	  "height": 225,
       "update": 150,
-      "class": "mini bluegradient middle"
+      "class": "mini bluegradient vertical-center"
     },	
-	{
-      "name": "travel_back",
-      "width": 500,
-	  "height": 225,
-      "update": 150,
-      "class": "mini bluegradient middle"
-    },    
+	   
 	{
       "name": "marta_north",
       "width": 500,

@@ -13,22 +13,23 @@
 }
 /* scoll bar width */
 ::-webkit-scrollbar {
-	width: 12px;
+	/* width: 12px; */
+	display:none;
 }
 
-::-webkit-scrollbar-track {
+/* ::-webkit-scrollbar-track { */
 	
-	-webkit-border-radius: 10px;
-	background-color: #000;
-	border-radius: 10px;
-}
+	/* -webkit-border-radius: 10px; */
+	/* background-color: #000; */
+	/* border-radius: 10px; */
+/* } */
 
-::-webkit-scrollbar-thumb {
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    background:#666; 
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
-}
+/* ::-webkit-scrollbar-thumb { */
+    /* -webkit-border-radius: 10px; */
+    /* border-radius: 10px; */
+    /* background:#666;  */
+    /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);  */
+/* } */
 
 .grid tr {
 	text-align:center;

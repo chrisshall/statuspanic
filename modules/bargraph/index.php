@@ -125,7 +125,7 @@ $final_padding2 = max($default_padding, ($max_width2 - (($bar_width2 + $total_ou
 	SCER Analytics
 </div>
 
-<div style="overflow-x:scroll;overflow-y:hidden">
+<div>
 	  <div style="font-size: 30px; text-align:center">
 			SCERs Assigned
 		</div>
