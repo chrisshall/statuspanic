@@ -7,7 +7,7 @@
 		<script src="modules/clock/FlipClock-master/compiled/flipclock.js"></script>		
 	</head>
 	<body>
-		<div id="clock1" class="flip-clock-wrapper" style="margin:3em;
+		<div id="clock1" class="flip-clock-wrapper" style="margin:3em; position:absolute;
 		"></div>
 		<!--<div class="countdownclock" style="margin:2em;"></div>-->
 
@@ -28,7 +28,7 @@
 					});
 					var root = document.getElementById("clock1");
 				traverse(root);
-				console.log(root);
+				//console.log(root);
 				
 
 				function traverse(currentEl){

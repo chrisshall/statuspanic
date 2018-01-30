@@ -24,7 +24,15 @@
       "width": 1100,
 	  "height": 0,
       "update": 0
-    },      
+    },    
+	    {
+      "name": "stocks_graph",
+	  "class": "modules stocks_graph",
+      "width": 1000,
+	  "height": 0,
+      "update": 0
+    },      	
+	
 	{
      "name": "clock",
       "class": "middle",

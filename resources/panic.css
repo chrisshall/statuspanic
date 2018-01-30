@@ -18,6 +18,7 @@ body {
 	height: 100%;
 	text-shadow: rgb(0,0,0) 0px 0px 0.2em;		
 	-webkit-text-stroke: 1px transparent; 
+	position:absolute;
 }
 
 #board {
@@ -38,6 +39,7 @@ table {
 	float: left;
 	text-align: center;
 	margin: 10px;
+	position:relative;
 }
 
 .mini {
@@ -59,6 +61,9 @@ table {
 	vertical-align: middle;
 	text-align: center;
 	padding-bottom:10px;
+}
+.stocks_graph{
+	visibility: hidden;	
 }
 
 .vertical-center {
