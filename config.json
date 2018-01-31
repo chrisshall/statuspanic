@@ -108,6 +108,13 @@
 		"width": 100
       }
     },
+	    {
+      "name": "grid_detailed",
+	  "class": "stocks_graph modules",
+      "width": 1000,
+	  "height": 0,
+      "update": 0
+    },
 			    {
       "name": "space",
       "width": 1100,
@@ -116,6 +123,7 @@
     },
     {
       "name": "grid",
+	  "class": "modules",
       "width": 1000,
       "update": 0
     },

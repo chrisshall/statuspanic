@@ -19,7 +19,7 @@ $data = json_decode($str, true);
 
 ?>
 
-<div class='grid'>
+<div class='grid' style="position:relative">
     <table  class=' grid table' border='0' width='100%' cellpadding='0' cellspacing='10'>
 		<th class='grid th'>SCER#</th>
 		<th class='grid th'>Assigned</th>

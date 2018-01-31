@@ -92,7 +92,7 @@ catch(Exception $e){
 }
 ?>
 
-<div id='chart_div' style="border-radius: 20px;margin-left:5em; visibility:inheret"></div>
+<div id='chart_div' style="border-radius: 20px;margin-left:5em; visibility:inherent"></div>
 
 
 
