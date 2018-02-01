@@ -6,6 +6,7 @@
 	overflow: scroll;
 	height:600px;
 	display:block;
+	
 }
 
 .grid th {
@@ -45,7 +46,21 @@
 	background: -webkit-gradient(linear, left top, left bottom, from(#333), to(#222), color-stop(0.5, #222), color-stop(0.5, #333));
 	border-bottom: 1px solid #555;
 	vertical-align: middle;
-	font-size:80%;
+	font-size:60%;
+	height: 34px;
+	/* width: 100px; */
+}
+.grid .details td {
+	background-color: #cccccc;
+	text-align: center;
+	padding-left: 10px;
+	margin: 10px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#333), to(#222), color-stop(0.5, #222), color-stop(0.5, #333));
+	border-bottom: 1px solid #555;
+	vertical-align: middle;
+	font-size:70%;
 	height: 34px;
 }
 
