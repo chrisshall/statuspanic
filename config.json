@@ -19,7 +19,13 @@
         "zipcode": "30096"
       }
     },
-	    {
+	{
+	  "name": "weather_hourly",
+	  "class": "weather-hourly",
+	  "width": 850,
+	  "update": 600
+	  },
+		{
       "name": "space",
       "width": 1100,
 	  "height": 0,

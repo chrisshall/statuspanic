@@ -129,9 +129,9 @@ $from_items = array(
 <div style="white-space:nowrap; overflow-x: scroll; overflow-y:hidden; float:left; height: 225px; width:800px;">
 	<div style="display:inline-block;float:left;width:800px; margin-left: 4em">
 		<div class="travel" style="height:45px;display:inline-block;">
-			<span class="travel">NCR</span> <span style="margin-left:0.5em; margin-right:0.5em;" class="background">I</span> <span class="travel">Home</span>
+			<span style="margin-left:-8em;" class="travel">Home</span> <span style="margin-left:-0.5em; margin-right:0.5em;" class="background">I</span> <span style="margin-left:2em;"class="travel">NCR</span>
 		</div>
-		<ul>
+		<ul style="margin-left:6em;">
 			<?php foreach($from_items as $bubble => $line) { 
 				$bubble = explode('|', $bubble);
 				$color  = $bubble[1];
@@ -149,9 +149,9 @@ $from_items = array(
 	</div>
 	<div style="display:inline-block;position:relative; width:800px; margin-left:4em">
 		<div class="travel" style="height:45px; display:inline-block">
-			<span class="travel">Home</span> <span style="margin-left:0.5em; margin-right:0.5em;" class="background">I</span> <span class="travel"> NCR </span>
+			<span class="travel">NCR</span> <span style="margin-left:0.5em; margin-right:0.5em;" class="background">I</span> <span class="travel"> HOME </span>
 		</div>
-		<ul>
+		<ul style="margin-left:10em;">
 			<?php foreach($items as $bubble => $line) { 
 				$bubble = explode('|', $bubble);
 				$color  = $bubble[1];

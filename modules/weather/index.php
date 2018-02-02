@@ -48,7 +48,7 @@ function displayIcon($array){
 ?>
 
 <html >
-	<div  style="margin-top:3.8em; margin-left:0.5em; float: left">
+	<div  id="weather_div" style="margin-top:3.8em; margin-left:0.5em; float: left">
 		<div class='mega'>
 			<?php echo displayCurrentIcon($icon_url);
 			echo $data_current['temp_f'] . '&deg; F, ' . $data_current['weather'];
@@ -56,7 +56,7 @@ function displayIcon($array){
 		</div>
 		<div style="margin-left:2px;font-size: 20px"><?php echo $data_current['display_location']['zip'] ?> / <?php echo $data_current['display_location']['city'] ?></div>
 	</div>
-<div style="white-space:nowrap;margin-left:13em;margin-top:-12em; height:250px; width:625px;display:inline-block; overflow-x:scroll; overflow-y:hidden">
+<div style="white-space:nowrap;margin-left:13em;margin-top:-12em; height:250px; width:600px;display:inline-block; overflow-x:scroll; overflow-y:hidden">
 
 		<div style="margin:10px;font-size:26px;display:inline-block; ">
 		<div>
@@ -149,3 +149,29 @@ function displayIcon($array){
 	</div>
 </span>
 <html>
+
+
+<script>
+	
+	var on= false;
+
+	document.getElementById("weather_div").addEventListener("click", function(e){
+		
+		if (!on){
+			document.getElementById("weather_hourly").style.visibility= "visible";
+			$('#weather_hourly').animate({
+				height:['300px', 'swing']}, 
+				{ duration: "slow", easing: "easein-out"});
+		}
+		else{
+				$('#weather_hourly').animate({
+				height:['0px', 'swing']}, 
+				{ duration: "slow", easing: "easein-out"});
+			//document.getElementById("stocks_graph").style.height = "0px";
+			document.getElementById("weather_hourly").style.visibility = "hidden";
+		}
+		on = !on;
+	});
+
+
+</script>
