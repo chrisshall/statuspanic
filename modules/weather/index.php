@@ -51,7 +51,7 @@ function displayIcon($array){
 	<div  id="weather_div" style="margin-top:3.8em; margin-left:0.5em; float: left">
 		<div class='mega'>
 			<?php echo displayCurrentIcon($icon_url);
-			echo $data_current['temp_f'] . '&deg; F, ' . $data_current['weather'];
+			echo $data_current['temp_f'] . '&deg; F, <br />' . $data_current['weather'];
 			?>
 		</div>
 		<div style="margin-left:2px;font-size: 20px"><?php echo $data_current['display_location']['zip'] ?> / <?php echo $data_current['display_location']['city'] ?></div>

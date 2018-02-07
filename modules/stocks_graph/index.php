@@ -147,7 +147,12 @@ catch(Exception $e){
 				interpolateNulls: false,
 				enableInteractivity: false,
 				pointSize: 5,
-				chartArea:{ width: '85%'},
+				colors: ["#333333"],
+				fill: 50,
+				thickness: 3,
+				backgroundColor: ["black"],
+				chartArea:{ width: '85%',
+							backgroundColor: '#222222'},
 				explorer: {
 					axis: 'horizontal'
 					},

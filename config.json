@@ -68,7 +68,7 @@
       "width": 800,
 	  "height": 225,
       "update": 150,
-      "class": "mini bluegradient vertical-center"
+      "class": "mini  vertical-center"
     },	
 	   
 	{
@@ -76,14 +76,14 @@
       "width": 500,
 	  "height": 325,
       "update": 0,
-      "class": "mini bluegradient middle"
+      "class": "mini  middle"
     },
 	{
       "name": "marta_south",
       "width": 500,
 	  "height": 325,
       "update": 0,
-      "class": "mini bluegradient middle"
+      "class": "mini middle"
     },
 
 	{
