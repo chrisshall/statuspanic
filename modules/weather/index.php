@@ -48,7 +48,7 @@ function displayIcon($array){
 ?>
 
 <html >
-	<div  id="weather_div" style="margin-top:3.8em; margin-left:0.5em; float: left">
+	<div  id="weather_div" style="margin-top:2em; margin-left:2em; float: left">
 		<div class='mega'>
 			<?php echo displayCurrentIcon($icon_url);
 			echo $data_current['temp_f'] . '&deg; F, <br />' . $data_current['weather'];
@@ -158,10 +158,14 @@ function displayIcon($array){
 	document.getElementById("weather_div").addEventListener("click", function(e){
 		
 		if (!on){
+			document.getElementById("line_div").style.marginTop = "7em";
 			document.getElementById("weather_hourly").style.visibility= "visible";
 			$('#weather_hourly').animate({
 				height:['300px', 'swing']}, 
 				{ duration: "slow", easing: "easein-out"});
+				if (document.getElementById("stocks_graph").style.visibility == "visible"){
+				document.getElementById("space").style.marginTop = "10em";
+			}
 		}
 		else{
 				$('#weather_hourly').animate({
@@ -169,6 +173,10 @@ function displayIcon($array){
 				{ duration: "slow", easing: "easein-out"});
 			//document.getElementById("stocks_graph").style.height = "0px";
 			document.getElementById("weather_hourly").style.visibility = "hidden";
+			document.getElementById("line_div").style.marginTop = "0em";
+			if (document.getElementById("stocks_graph").style.visibility == "visible"){
+				document.getElementById("space").style.marginTop = "0em";
+			}
 		}
 		on = !on;
 	});

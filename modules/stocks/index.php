@@ -108,6 +108,9 @@ document.getElementById('stockdiv').addEventListener('click',
 			$('#stocks_graph').animate({
 				height:['500px', 'swing']}, 
 				{ duration: "slow", easing: "easein-out"});
+			if (document.getElementById("weather_hourly").style.visibility == "visible"){
+				document.getElementById("space").style.marginTop = "10em";
+			}
 			
 		}
 		else{
@@ -116,6 +119,9 @@ document.getElementById('stockdiv').addEventListener('click',
 				{ duration: "slow", easing: "easein-out"});
 			//document.getElementById("stocks_graph").style.height = "0px";
 			document.getElementById("stocks_graph").style.visibility = "hidden";
+			if (document.getElementById("weather_hourly").style.visibility == "visible"){
+				document.getElementById("space").style.marginTop = "0em";
+			}
 		}
 		on = !on;
 	});

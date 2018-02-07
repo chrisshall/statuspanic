@@ -120,77 +120,76 @@ $bar_width2 = floor(min($max_bar_width, ($max_width2 - ($total_outer2 * $num_bar
 $final_padding2 = max($default_padding, ($max_width2 - (($bar_width2 + $total_outer2) * $num_bars2)) / $num_bars2 / 2)
 
 ?>
+<table style="display:inline-block; whitespace: nowrap; height: 600px; overflow-x:scroll: overflow-y:hidden>
+	<tr>
+		<td>
+			<div style="font-size: 48px; text-align:center; margin-bottom:1em;" >
+				SCER Analytics
+			</div>
+				<div>
+				  <div style="font-size: 30px; text-align:center">
+						SCERs Assigned
+					</div>
+				  <div class="bars">
+					<?php for($j = 0; $j < count($bars); $j++) {
+						$bar = $bars[$j];
+						$count = $j + 1;
+						$bar_height =  ($bar->height / $max_height) * $_GET['height'];
+						$bar_height = floor($bar_height);
+						$top_offset = $_GET['height'] - $bar_height;
+						?>
+					<div class='bar' style='margin-top: <?php echo ($top_offset) . 'px; width: ' .
+											$bar_width . 'px; padding: 0 ' . $final_padding . 'px;' ?>'>
+						<div class='header'><?php echo '<span class="total">'. $bar->height .'</span> / <span class="remaining">'. $bar->remaining .'</span>'; ?></div>
+						<div class='view' id='bar_<?php echo $count ?>' style='height: <?php echo $bar_height; ?>px;'></div>
 
-<div style="font-size: 48px; text-align:center; margin-bottom:1em;" >
-	SCER Analytics
-</div>
+					</div>
 
-<div>
-	  <div style="font-size: 30px; text-align:center">
-			SCERs Assigned
-		</div>
-	  <div class="bars">
-		<?php for($j = 0; $j < count($bars); $j++) {
-			$bar = $bars[$j];
-			$count = $j + 1;
-			$bar_height =  ($bar->height / $max_height) * $_GET['height'];
-			$bar_height = floor($bar_height);
-			$top_offset = $_GET['height'] - $bar_height;
-			?>
-		<div class='bar' style='margin-top: <?php echo ($top_offset) . 'px; width: ' .
-								$bar_width . 'px; padding: 0 ' . $final_padding . 'px;' ?>'>
-			<div class='header'><?php echo '<span class="total">'. $bar->height .'</span> / <span class="remaining">'. $bar->remaining .'</span>'; ?></div>
-			<div class='view' id='bar_<?php echo $count ?>' style='height: <?php echo $bar_height; ?>px;'></div>
-
-		</div>
-
-	<?php } ?>
-	  </div>
-	<?php for($j = 0; $j < count($bars); $j++) {
-		$bar = $bars[$j]; 
-	?>  
-		<div class='bar-title' style='width: <?php echo $bar_width . 'px; padding: 0 ' . $final_padding . 'px;' ?>'>
-			<span class='title'><?php echo $bar->name ?></span>
-		</div>
-		
-	<?php } ?>        
-	<div style='clear:both'></div>
-	</div>
-	
-	<!-- Bar Graph #2 -->
-	<div style="font-size: 30px; text-align:center; margin-top:2em; margin-bottom:1em;">
-		Closed vs. Active 2017
-	</div>
-	
-	<div style="display: inline-block">
-	  <div class="bars">
-	<?php for($j = 0; $j < count($bars2); $j++) {
-		$bar2 = $bars2[$j];
-		$count2 = $j + 1;
-		$bar_height2 =  ($bar2->height / $max_height2) * $_GET['height'];
-		$bar_height2 = floor($bar_height2);
-		$top_offset2 = $_GET['height'] - $bar_height2;
-		
-		
-	?>
-		<div class='bar' style='margin-top: <?php echo ($top_offset2) . 'px; width: ' .
-								$bar_width2 . 'px; padding: 0 ' . $final_padding2 . 'px;' ?>'>
-			<div class='header'><?php echo '<span class="total">'. $bar2->height .'</span> / <span class="remaining">'. $bar2->remaining .'</span>'; ?></div>
-			<div class='view' id='bar2_<?php echo $count2 ?>' style='height: <?php echo $bar_height2; ?>px;'></div>
-		</div>
-	<?php } ?>
-	  </div>
-	<?php for($j = 0; $j < count($bars2); $j++) {
-		$bar2 = $bars2[$j]; 
-	?>  
-		<div class='bar-title' style='width: <?php echo $bar_width2 . 'px; padding: 0 ' . $final_padding2 . 'px;' ?>'>
-			<span class='title'><?php echo $bar2->name ?></span>
-		</div>
-	<?php } ?>        
-	<div style='clear:both'></div>
-	</div>
-</div>
-
+				<?php } ?>
+				  </div>
+				<?php for($j = 0; $j < count($bars); $j++) {
+					$bar = $bars[$j]; 
+				?>  
+					<div class='bar-title' style='width: <?php echo $bar_width . 'px; padding: 0 ' . $final_padding . 'px;' ?>'>
+						<span class='title'><?php echo $bar->name ?></span>
+					</div>
+					
+				<?php } ?>        
+				<div style='clear:both'></div>
+				</div>
+		</td>
+		<td>
+				<!-- Bar Graph #2 -->
+				<div style="font-size: 30px; text-align:center; margin-top:2em; margin-bottom:1em;">
+					Closed vs. Active 2017
+				</div>
+				
+				<div style="display: inline-block">
+					<div class="bars">
+					<?php for($j = 0; $j < count($bars2); $j++) {
+						$bar2 = $bars2[$j];
+						$count2 = $j + 1;
+						$bar_height2 =  ($bar2->height / $max_height2) * $_GET['height'];
+						$bar_height2 = floor($bar_height2);
+						$top_offset2 = $_GET['height'] - $bar_height2;
+						?>
+							<div class='bar' style='margin-top: <?php echo ($top_offset2) . 'px; width: ' .
+											$bar_width2 . 'px; padding: 0 ' . $final_padding2 . 'px;' ?>'>
+							<div class='header'><?php echo '<span class="total">'. $bar2->height .'</span> / <span class="remaining">'. $bar2->remaining .'</span>'; ?></div>
+							<div class='view' id='bar2_<?php echo $count2 ?>' style='height: <?php echo $bar_height2; ?>px;'></div>
+							</div>
+						<?php } ?>
+					</div>
+					<?php for($j = 0; $j < count($bars2); $j++) {
+					$bar2 = $bars2[$j]; 
+					?>  
+					<div class='bar-title' style='width: <?php echo $bar_width2 . 'px; padding: 0 ' . $final_padding2 . 'px;' ?>'>
+						<span class='title'><?php echo $bar2->name ?></span>
+					</div>
+				<?php } ?>        
+				<div style='clear:both'></div>
+			</div>
+		</td></tr></table>
 <script>
 
 var garcia_on = false;

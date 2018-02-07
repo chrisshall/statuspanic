@@ -44,7 +44,7 @@ $data_hourly = $data_hourly['hourly_forecast'];
 		</tr>
 	</table>
 </div>
-<div id="line_div" style="height:0px; margin-top:7em;float:right">
+<div id="line_div" style="height:0px;float:right">
 
 </div>
 
@@ -64,103 +64,8 @@ $data_hourly = $data_hourly['hourly_forecast'];
 
 		$('#hourly_row').scroll(function(){
 			var x = $(this).scrollLeft()
-			if ( x >= 120 && x < 240) {
-				panChart(1);
-			}
-			else if ( x >= 240 && x < 360) {
-				panChart(2);
-			}
-			else if ( x >= 360 && x < 480) {
-				panChart(3);
-			}
-			else if ( x >= 480 && x < 600) {
-				panChart(4);
-			}
-			else if ( x >= 600 && x < 720) {
-				panChart(5);
-			}
-			else if ( x >= 720 && x < 840) {
-				panChart(6);
-			}
-			else if ( x >= 840 && x < 960) {
-				panChart(7);
-			}
-			else if ( x >= 960 && x < 1080) {
-				panChart(8);
-			}
-			else if ( x >= 1080 && x < 1200) {
-				panChart(9);
-			}
-			else if ( x >= 1200 && x < 1320) {
-				panChart(10);
-			}
-			else if ( x >= 1320 && x < 1440) {
-				panChart(11);
-			}
-			else if ( x >= 1440 && x < 1560) {
-				panChart(12);
-			}
-			else if ( x >= 1560 && x < 1680) {
-				panChart(13);
-			}
-			else if ( x >= 1680 && x < 1800) {
-				panChart(14);
-			}
-			else if ( x >= 1800 && x < 1920) {
-				panChart(15);
-			}
-			else if ( x >= 1920 && x < 2040) {
-				panChart(16);
-			}
-			else if ( x >= 2040 && x < 2160) {
-				panChart(17);
-			}
-			else if ( x >= 2160 && x < 2280) {
-				panChart(18);
-			}
-			else if ( x >= 2280 && x < 2400) {
-				panChart(19);
-			}
-			else if ( x >= 2400 && x < 2520) {
-				panChart(20);
-			}
-			else if ( x >= 2520 && x < 2640) {
-				panChart(21);
-			}
-			else if ( x >= 2640 && x < 2760) {
-				panChart(22);
-			}
-			else if ( x >= 2760 && x < 2880) {
-				panChart(23);
-			}
-			else if ( x >= 2880 && x < 3000) {
-				panChart(24);
-			}
-			else if ( x >= 3000 && x < 3120) {
-				panChart(25);
-			}
-			else if ( x >= 3120 && x < 3240) {
-				panChart(26);
-			}
-			else if ( x >= 3240 && x < 3360) {
-				panChart(27);
-			}
-			else if ( x >= 3360 && x < 3480) {
-				panChart(28);
-			}
-			else if ( x >= 3480 && x < 3600) {
-				panChart(29);
-			}
-			else if ( x >= 3600 && x < 3720) {
-				panChart(30);
-			}
-			else if ( x >= 3720 && x < 3840) {
-				panChart(31);
-			}
-			else if ( x >= 3840 && x < 3960) {
-				panChart(32);
-			}
-			
+			var index = Math.floor(x/120);
+			panChart(index);			
 		});
 		
 		function panChart(index){
@@ -182,7 +87,10 @@ $data_hourly = $data_hourly['hourly_forecast'];
 				chartArea:{ width: '85%',
 							backgroundColor: '#eeeeee'},
 				explorer: {
-					axis: 'horizontal',
+					actions: ['rightClickToReset'],
+					//axis: 'horizontal',
+					maxZoomOut: 1,
+					maxZoomIn: 1,
 					keepInBounds: true
 					},
 				hAxis: {
@@ -253,6 +161,7 @@ $data_hourly = $data_hourly['hourly_forecast'];
 			options = {
 				width: 850,
 				height: 375,
+				fontColor: 'white',
 				legend: {position: 'none'},
 				interpolateNulls: false,
 				enableInteractivity: false,
@@ -268,7 +177,10 @@ $data_hourly = $data_hourly['hourly_forecast'];
 				chartArea:{ width: '85%',
 							backgroundColor: '#eeeeee'},
 				explorer: {
-					axis: 'horizontal',
+					actions: ['rightClickToReset'],
+					//axis: 'horizontal',
+					maxZoomOut: 1,
+					maxZoomIn: 1,
 					keepInBounds: true
 					},
 				hAxis: {
@@ -289,6 +201,15 @@ $data_hourly = $data_hourly['hourly_forecast'];
 							minutes: {format: ['HH:mm a Z', ':mm']}
 						}
 					}
+				},
+				vAxis: {
+					textStyle: {
+						fontSize: 18,
+						color: 'white',
+					}
+				},
+				tooltip:{
+					trigger: 'focus'
 				}
 				
 			};
